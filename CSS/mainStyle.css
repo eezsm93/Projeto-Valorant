@@ -24,3 +24,93 @@ img{
     display: block;
     max-width: 100%;
 }
+
+.header-bg{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(../images/Background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 46.5em;
+    
+}
+
+.header-top{
+    border: 4px solid green;
+    max-width: 76.5em;
+    margin: 0 auto;
+    padding-top: 15px;
+    align-items: center;
+    flex: 1 1 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header-nav ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-nav ul li{
+    margin-left: 2.5em;
+    color: #FFFFFF;
+    font-size: 0.875em;
+    text-transform: uppercase;
+}
+
+.header-nav ul li:hover{
+    color:#E13157;
+}
+
+
+.btn{
+    color: white;
+    margin: 0 auto;
+    padding: 0.8em;
+    background: #E13157 0% 0% no-repeat padding-box;
+    border: 1px solid #E13157;
+    border-radius: 5px;
+    opacity: 1;
+    text-transform: uppercase;
+    font-size: 0.875em;
+    font-weight: normal;
+
+}
+
+.btn:hover{
+    color: black;
+    
+
+}
+
+.main{
+    background-color: rgba(0,0,0,0.25);
+}
+
+.agents-bg{
+    max-width: 100%;
+    background-image: url(../images/valorant-ep1-ato3-publi.png);
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 46.5em;
+}
+
+.agents-container{
+    margin: 0 auto;
+    max-width: 76.5em;
+    border: 4px solid green;
+}
+
+.agents-tittle{
+    font-weight: normal;
+    font-style: italic;
+    margin: 0 auto;
+    color: white;
+    font-size:2.5em;
+    text-transform: uppercase;
+}
