@@ -38,14 +38,23 @@ img{
     background-position: center;
     background-size: cover;
     padding-bottom: 46.5em;
+    position: relative;
+}
+
+.header-valorant{
+    position: absolute;
+    top: 85%;
+    left: 25%;
+   
     
+
 }
 
 .header-top{
-    border: 4px solid green;
     max-width: 76.5em;
     margin: 0 auto;
     padding-top: 15px;
+    padding-bottom: 15px;
     align-items: center;
     flex: 1 1 300px;
     display: flex;
@@ -90,6 +99,8 @@ img{
 
 }
 
+
+
 .main{
    
 }
@@ -97,7 +108,7 @@ img{
 .agents-bg{
     max-width: 100%;
     background-image: url(../images/valorant-ep1-ato3-publi.png);
-    
+    opacity: 0.1;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -126,10 +137,6 @@ img{
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
-    
-
-   
-
 }
 
 .maps-container{
@@ -234,9 +241,14 @@ img{
 .suport-container{
     margin: 0 auto;
     max-width: 76.5em;
+    border: 1px solid green;
+}
+
+.suport-bg{
     background: white;
     border-radius: 5px;
     opacity: 1;
+    padding: 50px;
 }
 
 .suport-title{
@@ -251,5 +263,13 @@ img{
     align-items: center;
     justify-content: center;
     align-content: center;
+    
+}
+
+.suport-form input{
+    margin: 15px 10px 10px auto;
+}
+
+.btn-form{
     
 }
