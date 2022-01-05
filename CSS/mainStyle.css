@@ -90,7 +90,9 @@ img{
 
 }
 
-
+.main{
+   
+}
 
 .agents-bg{
     max-width: 100%;
@@ -116,6 +118,18 @@ img{
     color: white;
     font-size:2.5em;
     text-transform: uppercase;
+}
+
+.middle-bg{
+    
+    background-image: url(../images/valorant-game-logo-4k-wi-2048x2048.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    
+
+   
+
 }
 
 .maps-container{
@@ -186,11 +200,56 @@ img{
 }
 
 .weapons-right{
-    
+    border: 1px solid blue;
 }
 
 .weapons-card{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+
+.download-container{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 76.5em;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.download-left{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.suport-container{
+    max-width: 100%;
+    padding-bottom: 46.5em;
+
+}
+.suport-container{
+    margin: 0 auto;
+    max-width: 76.5em;
+    background: white;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.suport-title{
+    color: #04254C;
+    font-weight: normal;
+    font-size: 3em;
+    font-style: italic;
+}
+
+.suport-form{
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
 }
