@@ -37,14 +37,14 @@ img{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-bottom: 46.5em;
     position: relative;
+    padding-bottom: 45rem;
 }
 
 .header-valorant{
     position: absolute;
     top: 85%;
-    left: 25%;
+    left: 25%
    
     
 
@@ -55,11 +55,12 @@ img{
     margin: 0 auto;
     padding-top: 15px;
     padding-bottom: 15px;
-    align-items: center;
     flex: 1 1 300px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border-bottom: 1px solid gray;
+    align-items: center;
 }
 
 .header-nav ul{
@@ -72,11 +73,19 @@ img{
     color: #FFFFFF;
     font-size: 0.875em;
     text-transform: uppercase;
+    
 }
 
-.header-nav ul li:hover{
+
+
+.header-nav ul li a{
+    color: white;
+}
+
+.header-nav ul li a:hover{
     color:#E13157;
 }
+
 
 
 .btn{
@@ -106,19 +115,35 @@ img{
 }
 
 .agents-bg{
-    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-top: 10vh;
+}
+
+.agents-bg::before{
+    content: " ";
     background-image: url(../images/valorant-ep1-ato3-publi.png);
-    opacity: 0.1;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 46.5em;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0.1;
 }
 
 .agents-container{
     margin: 0 auto;
     max-width: 76.5em;
 
+}
+
+.title-agents{
+    position: relative;
 }
 
 .tittle{
@@ -144,6 +169,11 @@ img{
     max-width: 76.5em;
     padding-bottom: 46.5em;
     
+}
+
+.weapons-bg{
+    max-width: 100%;
+    margin-bottom: 10em;
 }
 
 .weapons-header{
@@ -207,13 +237,18 @@ img{
 }
 
 .weapons-right{
-    border: 1px solid blue;
+
 }
 
 .weapons-card{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.download-bg{
+    max-width: 100%;
+    margin-bottom: 10em;
 }
 
 
@@ -233,6 +268,51 @@ img{
     flex-direction: column;
 }
 
+.download-left h2{
+    margin-left: 0;
+}
+
+.download-reason{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    padding: 40px 20px 10px 0;
+}
+
+.download-reason-img{
+    margin-right: 25px;
+}
+
+.download-reason h4{
+    color: white;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.btn-download{
+    margin-top: 40px;
+    display: flex;
+    background: #E13157 0% 0% no-repeat padding-box;
+    border: 1px solid #E13157;
+    border-radius: 5px;
+    opacity: 1;
+    padding: 10px 40px 10px 40px;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.btn-download:hover{
+    color: black;
+}
+
+.btn-dowload-img{
+    margin-right: 15px;
+}
+
+
 .suport-container{
     max-width: 100%;
     padding-bottom: 46.5em;
@@ -241,7 +321,6 @@ img{
 .suport-container{
     margin: 0 auto;
     max-width: 76.5em;
-    border: 1px solid green;
 }
 
 .suport-bg{
