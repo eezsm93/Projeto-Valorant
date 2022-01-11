@@ -1,57 +1,138 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Valorant</title>
-        <meta charset="utf-8">
-        <meta name="author" content="Douglas Miller Fernandes">
-        <meta name="description" content="Teste GX2 Valorant">
-        <meta name="keywords" content="Primeiro Teste GX2">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-        <link href="CSS/mainStyle.css" rel="stylesheet">
-        <script src="JS/main.js"></script>
 
-        <script>
-        </script>
-
-    </head>
+<head>
+    <title>Valorant</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Douglas Miller Fernandes">
+    <meta name="description" content="Teste GX2 Valorant">
+    <meta name="keywords" content="Primeiro Teste GX2">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="CSS/mainStyle.css" rel="stylesheet">
+    <link href="CSS/agentesStyle.css" rel="stylesheet">
 
 
-    <body>
-        <header class="header-bg">
-            <div class="header-top">
-                <div>
-                    <img src="images/Logo.svg">
-                </div>
+    <script>
+    </script>
 
-                <div>
-                    <nav class="header-nav">
-                        <ul>
-                            <li>Agentes</li>
-                            <li>Mapas</li>
-                            <li>Arsenal</li>
-                            <li>Download</li>
-                            <li>Suporte</li>
-                        </ul>
-                    </nav>
-                </div>
+</head>
 
-                <div>
-                    <button class="btn">Jogue Agora</button>
-                </div>
 
+<body>
+    <header class="header-bg">
+        <div class="header-top">
+            <div>
+                <img src="images/Logo.svg">
             </div>
-                <div class="header-valorant">
-                <img src="images/-41603133698zip8pbgjls-removebg-preview.png">
+
+            <div>
+                <nav class="header-nav">
+                    <ul>
+                        <li>Agentes</li>
+                        <li>Mapas</li>
+                        <li>Arsenal</li>
+                        <li>Download</li>
+                        <li>Suporte</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div>
+                <button class="btn">Jogue Agora</button>
+            </div>
+
+        </div>
+        <div class="header-valorant">
+            <img src="images/-41603133698zip8pbgjls-removebg-preview.png">
+        </div>
+    </header>
+    <div class="modal-back">
+        <div class="modal-container01">
+            <div class="modal-left">
+                <h3>Função</h3>
+                <h1 id="field-function"></h1>
+                <p id="field-description" class="description-p"></p>
+                <h3 class="habilidade-tittle">Habilidades</h3>
+                <div class="modal-habilidades">
+                    <div class="habilidade">
+                        <div class="arma-primaria">
+                            <p>Arma Primaria</p>
+                        </div>
+                        <div class="dmg-arma-primaria">
+                            <p id="primary-dmg-field" class="dmg-p"></p>
+                        </div>
+                    </div>
+                    <div class="habilidade">
+                        <div class="arma-secundaria">
+                            <p>Arma secundaria</p>
+                        </div>
+                        <div class="dmg-arma-secundaria">
+                            <p id="secondary-dmg-field" class="dmg-p"></p>
+                        </div>
+                    </div>
+                    <div class='habilidade'>
+                        <div class="arma-branca">
+                            <p>Arma branca</p>
+                        </div>
+                        <div class="dmg-arma-branca">
+                            <p id="melee-dmg-field" class="dmg-p"></p>
+                        </div>
+                    </div>
+                    <div class="habilidade">
+                        <div class="especial">
+                            <p>Especial</p>
+                        </div>
+                        <div class="dmg-arma-branca">
+                            <p id="special-dmg-field" class="dmg-p"></p>
+                        </div>
+                    </div>
                 </div>
-        </header>
-        <main>
+            </div>
+            <div class="modal-right">
+                <img id="agent-img-element" src="./agents/not-available.png">
+            </div>
+            <span class="modal-close">X</p>
+        </div>
+    </div>
 
-        </main>
+    <div class="modal-newAgent">
+        <div class="modal-container01">
+
+            <div class="newAgent-content">
+
+                <div class="grid-col" style="background-color: blue;"></div>
+                <div class="grid-col" style="background-color: red;"></div>
+                <div class="grid-col" style="background-color: green;"></div>
+            </div>
+            <span class="modal-newAgent-close">X</p>
+        </div>
+    </div>
 
 
 
-    </body>
+
+
+
+
+    <main>
+        <section class="agents-bg">
+            <div class="agents-container">
+                <div>
+                    <h2 class="tittle title-agents">Agentes</h2>
+                </div>
+                <div id="cardContainer">
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+</body>
+<script src="JS/agentes.js"></script>
+
 </html>
