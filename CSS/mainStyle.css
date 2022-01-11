@@ -108,6 +108,118 @@ img{
 
 }
 
+.modal-component {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .modal-back, .modal-back-new-agent {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s;
+    z-index: 10;
+  }
+  
+  .bg-active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .modal-container01 {
+    display: flex;
+    background-color: white;
+    width: 75%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    position: relative;
+    
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .modal-left {
+    margin: 0 auto;
+    max-width: 50%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .modal-left h3 {
+    color: #e13157;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5em;
+  }
+  
+  .modal-left h1 {
+    color: #133052;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3.37em;
+    font-weight: bold;
+  }
+  
+  .modal-left p {
+    color: #133052;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4em;
+  }
+  
+  .modal-right {
+    display: flex;
+    max-width: 30em;
+    justify-content: center;
+    height: 100%;
+  }
+  .modal-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .habilidade {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+  }
+  .habilidade-tittle {
+    padding-bottom: 15px;
+  }
+  .description-p {
+    padding-bottom: 30px;
+    padding-top: 15px;
+  }
+  .dmg-p {
+    font-weight: bold;
+  }
+  
+
 .agents-bg{
     width: 100%;
     height: 100%;
@@ -158,9 +270,38 @@ img{
     margin-bottom: 45px;
     position: relative;
     z-index: 2;
-    cursor: pointer;
+    cursor: pointer
+
     
   }
+
+  .seeAllAgentCards{
+    width: 250px;
+    height: 300px;
+    margin-bottom: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #E13157;
+    position: relative;
+    z-index: 2;
+    cursor: pointer
+  }
+
+  .seeAllAgentCards img{
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer
+  }
+
+  .seeAllAgentCards h4{
+    color: #E13157;
+    font-size: 1.5em;
+    font-weight: normal;
+  } 
 
   .newAgentCard{
     width: 250px;
@@ -180,6 +321,9 @@ img{
     width: 25px;
     height: 25px;
     margin-right: 15px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer
   }
 
   .newAgentCard h4{

@@ -310,27 +310,70 @@ var maps = myData.data.maps;
 var mapContainerElement = document.getElementById("mapsContainer");
 
 
+cardContainerElement.innerHTML += ""
 
-cardContainerElement.innerHTML = 
-`<div class="newAgentCard">
-  <img class="agentImage" src="images/Caminho 261.png"/>
-  <h4><b>Adicionar</b></h4> 
-</div>`;
-
-agents.map(function (item, index) {
+agents.forEach(function (item, index /*, arr */) {
     //map é um loop que executa uma função pra cada item do array
     cardContainerElement.innerHTML += `
     <div class="agentCard" agent="${index}">
       <img class="agentImage" src="${item.image}"/>
-      <h4>${item.name}</h4> 
+      <h4>${item.name}</h4>
     </div>`;
   });
 
-console.log(maps);
+  cardContainerElement.innerHTML += 
+  `<a href="./agentes.html"><div class="seeAllAgentCards">
+  <img class="agentImage" src="images/Caminho 243.png"/>
+  <h4><b>Ver Todos</b></h4>
+  </div></a>`;
 
-maps.map(function(index){
+
+maps.forEach(function(path){
    mapContainerElement.innerHTML += `
    <div class="mapsCards">
-      <img class="mapImg" src="${index}"/>
+      <img class="mapImg" src="${path}"/>
     </div>`;
 });
+
+var modalBack = document.querySelector(".modal-back");
+var closeModal = document.querySelector(".modal-close");
+closeModal.addEventListener("click", function () {
+  modalBack.classList.remove("bg-active");
+});
+
+document.querySelectorAll(".agentCard").forEach(function (item) {
+  item.addEventListener("click", (event) => {
+    var functionField = document.getElementById("field-function");
+    var descriptionField = document.getElementById("field-description");
+    var primaryDmgField = document.getElementById("primary-dmg-field");
+    var secondaryDmgField = document.getElementById("secondary-dmg-field");
+    var meleeDmgField = document.getElementById("melee-dmg-field");
+    var specialDmgField = document.getElementById("special-dmg-field");
+    var agentImgElement = document.getElementById("agent-img-element");
+    
+    var agent = agents[item.getAttribute("agent")];
+    
+    functionField.innerHTML = agent.function;
+    descriptionField.innerHTML = agent.description;
+    primaryDmgField.innerHTML = agent.skills[0].damage + " Dano";
+    secondaryDmgField.innerHTML = agent.skills[1].damage + " Dano";
+    meleeDmgField.innerHTML = agent.skills[2].damage + " Dano";
+    specialDmgField.innerHTML = agent.skills[3].damage + " Dano";
+    agentImgElement.src = agent.image;
+    modalBack.classList.add("bg-active");
+  });
+});
+
+
+
+var newAgentCard = document.querySelector(".newAgentCard");
+var modalBackNewAgent = document.querySelector(".modal-back-new-agent");
+var closeModalNewAgent = document.querySelector(".modal-close-new-agent");
+/*newAgentCard.addEventListener("click", function () {
+  modalBackNewAgent.classList.add("bg-active");
+});*/
+
+
+// closeModalNewAgent.addEventListener("click", function () {
+//   modalBackNewAgent.classList.remove("bg-active");
+// });
