@@ -110,9 +110,11 @@ img{
 
 .agents-bg{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
-    margin-top: 10vh;
+    padding-bottom: 100px;
+    padding-top: 100px;
+
 }
 
 .agents-bg::before{
@@ -132,7 +134,7 @@ img{
 .agents-container{
     margin: 0 auto;
     max-width: 76.5em;
-
+    
 }
 
 .title-agents{
@@ -148,6 +150,77 @@ img{
     font-size:2.5em;
     text-transform: uppercase;
 }
+
+  .agentCard {
+    border: 1px solid #133052;
+    width: 250px;
+    height: 300px;
+    margin-bottom: 45px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    
+  }
+
+  .newAgentCard{
+    width: 250px;
+    height: 300px;
+    margin-bottom: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #E13157;
+    position: relative;
+    z-index: 2;
+    cursor: pointer
+    
+  }
+
+  .newAgentCard img{
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+  }
+
+  .newAgentCard h4{
+    color: #E13157;
+    font-size: 1.5em;
+    font-weight: normal;
+
+  }
+
+  .agentCard h4{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  #cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+    
+    
+    
+  }
+  
+  .agentImage{
+    width: 100%;
+    border: 1px solid #133052;
+  }
+  .agentImage{
+    width: 100%;
+    padding: 2px;
+    border: 1px solid #133052;
+  }
+
+
+
+
+
+
 
 .middle-bg{
     
