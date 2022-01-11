@@ -306,6 +306,9 @@ var myJson = `{
 var myData = JSON.parse(myJson);
 var cardContainerElement = document.getElementById("cardContainer");
 var agents = myData.data.agents;
+var maps = myData.data.maps;
+
+console.log(maps);
 
 cardContainerElement.innerHTML = `
 <div class="newAgentCard">
