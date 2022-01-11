@@ -307,11 +307,12 @@ var myData = JSON.parse(myJson);
 var cardContainerElement = document.getElementById("cardContainer");
 var agents = myData.data.agents;
 var maps = myData.data.maps;
+var mapContainerElement = document.getElementById("mapsContainer");
 
-console.log(maps);
 
-cardContainerElement.innerHTML = `
-<div class="newAgentCard">
+
+cardContainerElement.innerHTML = 
+`<div class="newAgentCard">
   <img class="agentImage" src="images/Caminho 261.png"/>
   <h4><b>Adicionar</b></h4> 
 </div>`;
@@ -324,3 +325,12 @@ agents.map(function (item, index) {
       <h4>${item.name}</h4> 
     </div>`;
   });
+
+console.log(maps);
+
+maps.map(function(index){
+   mapContainerElement.innerHTML += `
+   <div class="mapsCards">
+      <img class="mapImg" src="${index}"/>
+    </div>`;
+});

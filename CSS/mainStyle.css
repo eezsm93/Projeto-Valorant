@@ -201,9 +201,6 @@ img{
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-between;
-    
-    
-    
   }
   
   .agentImage{
@@ -216,9 +213,11 @@ img{
     border: 1px solid #133052;
   }
 
-
-
-
+  .maps-cards{
+      display: flex;
+      flex-wrap: wrap;
+      
+  }
 
 
 
@@ -228,6 +227,8 @@ img{
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
+    border-top: solid 1px #E13157;
+    border-bottom: solid 1px #E13157;
 }
 
 .maps-container{
