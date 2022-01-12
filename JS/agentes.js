@@ -311,7 +311,7 @@ cardContainerElement.innerHTML += "";
 
 cardContainerElement.innerHTML += `<div class="newAgentCard">
   <img class="agentImage" src="images/Caminho 261.png"/>
-  <h4><b>Novo Agente</b></h4>
+  <h4><b>Adicionar</b></h4>
   </div>`;
 
 agents.forEach(function (item, index /*, arr */) {

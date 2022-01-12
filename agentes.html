@@ -105,7 +105,13 @@
                     <p class="tittle-newAgente">Adicionar Agente</p>
                 </div>
                 <div class="function">
-                    <input type="text" placeholder="Função">
+                    <select>
+                        <option value="function">Função</option>
+                        <option value="duelist">Duelista</option>
+                        <option value="sentinel">Sentinela</option>
+                        <option value="controler">Controlador</option>
+                        <option value="engage">Iniciador</option>
+                    </select>
                 </div>
                 <div class="hab-1">
                     <input type="text" placeholder="Habilidade-1">
@@ -160,6 +166,30 @@
             <div class="agents-container">
                 <div>
                     <h2 class="tittle title-agents">Agentes</h2>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="site-search" name="q" placeholder="Pesquisar">
+                </div>
+                <div class="search-container">
+                    <fieldset class="">
+                        <legend>Filtrar Agentes</legend>
+                        <select>
+                            <option value="volvo">Função</option>
+                            <option value="volvo">Duelista</option>
+                            <option value="volvo">Sentinela</option>
+                            <option value="volvo">Controlador</option>
+                            <option value="volvo">Iniciador</option>
+                        </select>
+                        <select>
+                            <option value="volvo">Selecione um filtro</option>
+                            <option value="volvo">Duelista</option>
+                            <option value="volvo">Sentinela</option>
+                            <option value="volvo">Controlador</option>
+                            <option value="volvo">Iniciador</option>
+                        </select>
+                        <input type="text" placeholder="Informe o valor do dano">
+                        <input type="submit" value="Filtrar">
+                    </fieldset>
                 </div>
                 <div id="cardContainer">
                 </div>
