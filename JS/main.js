@@ -307,33 +307,41 @@ var myData = JSON.parse(myJson);
 var cardContainerElement = document.getElementById("cardContainer");
 var agents = myData.data.agents;
 var maps = myData.data.maps;
+var guns = myData.data.guns;
+var gunsContainerElement = document.getElementById("gunsContainerElement");
 var mapContainerElement = document.getElementById("mapsContainer");
-
 
 cardContainerElement.innerHTML += ""
 
 agents.forEach(function (item, index /*, arr */) {
-    //map é um loop que executa uma função pra cada item do array
-    cardContainerElement.innerHTML += `
+  //map é um loop que executa uma função pra cada item do array
+  cardContainerElement.innerHTML += `
     <div class="agentCard" agent="${index}">
       <img class="agentImage" src="${item.image}"/>
       <h4>${item.name}</h4>
     </div>`;
-  });
+});
 
-  cardContainerElement.innerHTML += 
+
+
+
+cardContainerElement.innerHTML +=
   `<a href="./agentes.html"><div class="seeAllAgentCards">
   <img class="agentImage" src="images/Caminho 243.png"/>
   <h4><b>Ver Todos</b></h4>
   </div></a>`;
 
 
-maps.forEach(function(path){
-   mapContainerElement.innerHTML += `
+maps.forEach(function (path) {
+  mapContainerElement.innerHTML += `
    <div class="mapsCards">
       <img class="mapImg" src="${path}"/>
     </div>`;
 });
+
+
+
+
 
 var modalBack = document.querySelector(".modal-back");
 var closeModal = document.querySelector(".modal-close");
@@ -350,9 +358,9 @@ document.querySelectorAll(".agentCard").forEach(function (item) {
     var meleeDmgField = document.getElementById("melee-dmg-field");
     var specialDmgField = document.getElementById("special-dmg-field");
     var agentImgElement = document.getElementById("agent-img-element");
-    
+
     var agent = agents[item.getAttribute("agent")];
-    
+
     functionField.innerHTML = agent.function;
     descriptionField.innerHTML = agent.description;
     primaryDmgField.innerHTML = agent.skills[0].damage + " Dano";
@@ -377,3 +385,19 @@ var closeModalNewAgent = document.querySelector(".modal-close-new-agent");
 // closeModalNewAgent.addEventListener("click", function () {
 //   modalBackNewAgent.classList.remove("bg-active");
 // });
+
+guns.primaryGun.forEach(function(path){
+  gunsContainerElement.innerHTML = `
+  <div class="weapons-left">
+  <h4 class="weapon-tittle">Arma primaria</h4>
+  <div class="weapons-card">
+      <img class="arrow-left" src="images/Caminho 255.svg">
+      <div class="weapons-border">
+      <img class="weapons-img" src="${path}">
+      </div>
+      <img class="arrow-right" src="images/Caminho 256.svg">
+  </div>
+<div class="weapons-right">
+  <img src="images/V_AGENTS_587x900_Cypher.png">
+</div>`;
+});
