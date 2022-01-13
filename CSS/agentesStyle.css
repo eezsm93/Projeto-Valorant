@@ -1,5 +1,38 @@
+.header-bg-agent{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.header-top-agent{
+    max-width: 76.5em;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    align-items: center;
+}
+.header-nav-agent ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.header-nav-agent ul li{
+    margin-left: 2.5em;
+    color: #FFFFFF;
+    font-size: 0.875em;
+    text-transform: uppercase;
+}
+.header-nav-agent ul li a{
+    color: white;
+}
+.header-nav-agent ul li a:hover{
+    color:#E13157;
+}
+
 .modal-newAgent {
-    border: solid 2px blue;
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -19,13 +52,59 @@
   }
   
   
-  .modal-newAgent-close{
+.modal-newAgent-close{
     position: absolute;
     top: 10px;
     right: 10px;
     font-weight: bold;
     cursor: pointer;
   }
+
+
+
+
+.agents-bg-newAgent{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: 100px;
+    padding-top: 100px;
+
+}
+
+.agents-bg-newAgent::before{
+    content: " ";
+    background-image: url(../images/valorant-ep1-ato3-publi.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.05;
+}
+
+.agents-container-newAgent{
+    margin: 0 auto;
+    max-width: 76.5em;
+    
+}
+
+.title-agents{
+    position: relative;
+}
+
+.tittle{
+    text-decoration: none;
+    font-weight: normal;
+    font-style: italic;
+    margin: 0 auto;
+    color: white;
+    font-size:2.5em;
+    text-transform: uppercase;
+}
 
 .newAgentCard {
     width: 250px;
@@ -78,10 +157,22 @@
     "hab-2 dmg-2 img"
     "hab-3 dmg-3 img"
     "hab-4 dmg-4 img"
-    "none none btn-container"
+    "nameNewField nameNewAgent btn-container"
     ;
     align-content: center;
     gap: 25px;
+}
+
+.modal-container-newAgent label{
+    font-weight: bold;
+    color: #133052;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.agentImage{
+    border-style: none;
 }
 
 .tittle-newAgente{
@@ -91,7 +182,6 @@
     font-weight: bold;
     font-size:3.37em;
     gap: 15px;
-
 }
 
 .function{
@@ -149,15 +239,26 @@
 .img{
     display: grid;
     grid-area: img;
-    border: solid 4px #E13157;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center; 
+    align-content: center;
 }
 
 .img-add{
-    margin-right: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+.nameNewField{
+    display: grid;
+    grid-area: nameNewField;
+}
+
+.nameNewAgent{
+    display: grid;
+    grid-area: nameNewAgent;
 }
 
 .btn1{
@@ -188,6 +289,28 @@
 
 
 
+.fieldSearch{
+    padding: 10px 30px 5px 30px;
+    background: white;
+    border: 1px solid #707070;
+    border-radius: 8px;
+    opacity: 1;
+    background-image: url(../images/Caminho\ 263.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 98%) center;
+    background-size: 18px 18px;
+    font-size: 1em;
+    padding-right: 4.7em;
+    width: 25%;
+    height: 100%;
+}
+
+.fieldSearch::placeholder{
+    color:#133052;
+    font-style: italic;
+}
+
+
 
 .btn-container{
     display: grid;
@@ -199,6 +322,7 @@
     
 }
 
+
 .search-container fieldset{
     max-width: 100%;
     margin-bottom: 25px;
@@ -208,14 +332,140 @@
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+    position: relative;
 
-}
-
-.search-container legend{
-    color: white;
 }
 
 .search-box{
     margin-top: 20px;
     margin-bottom: 20px;
+    position: relative;
 }
+
+.search-container fieldset{
+    border: 2px solid #707070
+
+}
+
+.search-container legend{
+    color: white;
+
+}
+
+.filter-btn{
+    color: white;
+    background: #E13157 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    opacity: 1;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    align-items: center;
+    font-size: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.filter-btn:hover{
+    color: black;
+}
+
+.filter-dmg{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #133052;
+    border-radius: 5px;
+    font-size: 1em;
+    opacity: 1;
+    padding-right: 70px;
+    padding-left: 10px;
+    color:#133052;
+
+}
+
+
+
+.filter-dmg::placeholder{
+    color:#133052;
+}
+
+.filter-selectFilter{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #133052;
+    border-radius: 5px;
+    font-size: 1em;
+    opacity: 1;
+    padding-right: 70px;
+    padding-left: 10px;
+    color:#133052;
+}
+
+.filter-Habilit{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #133052;
+    border-radius: 5px;
+    font-size: 1em;
+    opacity: 1;
+    padding-right: 70px;
+    padding-left: 10px;
+    color:#133052;
+}
+
+.functionSelectModal{
+    color:#133052;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+
+.drop-zone {
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 1.25em;
+    cursor: pointer;
+    color: #cccccc;
+    border: 4px dashed #E13157;
+    border-radius: 2px;
+  }
+  
+  .drop-zone--over {
+    border-style: solid;
+  }
+  
+  .drop-zone__input {
+    display: none;
+  }
+  
+  .drop-zone__thumb {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+  }
+  

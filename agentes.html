@@ -23,31 +23,26 @@
 
 
 <body>
-    <header class="header-bg">
-        <div class="header-top">
+    <header class="header-bg-agent">
+        <div class="header-top-agent">
             <div>
                 <img src="images/Logo.svg">
             </div>
-
             <div>
-                <nav class="header-nav">
+                <nav class="header-nav-agent">
                     <ul>
-                        <li>Agentes</li>
-                        <li>Mapas</li>
-                        <li>Arsenal</li>
-                        <li>Download</li>
-                        <li>Suporte</li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Mapas</a></li>
+                        <li><a href="#">Arsenal</a></li>
+                        <li><a href="#">Download</a></li>
+                        <li><a href="#">Suporte</a></li>
                     </ul>
                 </nav>
             </div>
-
             <div>
                 <button class="btn">Jogue Agora</button>
             </div>
 
-        </div>
-        <div class="header-valorant">
-            <img src="images/-41603133698zip8pbgjls-removebg-preview.png">
         </div>
     </header>
     <div class="modal-back">
@@ -104,91 +99,94 @@
                 <div>
                     <p class="tittle-newAgente">Adicionar Agente</p>
                 </div>
+                <div class="nameNewAgent">
+                    <input type="text" id="nomeField"  placeholder="Nome">
+                </div>
                 <div class="function">
-                    <select>
-                        <option value="function">Função</option>
+                    <select id="functionSelect" class="functionSelectModal">
+                        <option disabled selected value="">Função...</option>
                         <option value="duelist">Duelista</option>
                         <option value="sentinel">Sentinela</option>
                         <option value="controler">Controlador</option>
                         <option value="engage">Iniciador</option>
                     </select>
                 </div>
+                
                 <div class="hab-1">
-                    <label>Arma Primaria</label>
+                    <label>Arma Primária</label>
                 </div>
                 <div class="hab-2">
-                    <input type="text" placeholder="Habilidade-2">
+                    <label>Arma Secundária</label>
                 </div>
                 <div class="hab-3">
-                    <input type="text" placeholder="Habilidade-3">
+                    <label>Arma Branca</label>
                 </div>
                 <div class="hab-4">
-                    <input type="text" placeholder="Habilidade-4">
+                    <label>Especial</label>
+                </div>
+                <div class="nameNewField">
+                    <label>Nome do Personagem</label>
                 </div>
                 <div class="description">
-                    <input type="text" placeholder="Descricao">
+                    <input type="text" id="descriptionField" placeholder="Descricao">
                 </div>
                 <div class="dmg-1">
-                    <input type="text" placeholder="Dano 1">
+                    <input id="prymaryWeaponField" type="text" placeholder="Dano 1">
                 </div>
                 <div class="dmg-2">
-                    <input type="text" placeholder="Dano 2">
+                    <input id="secondaryWeaponField" type="text" placeholder="Dano 2">
                 </div>
                 <div class="dmg-3">
-                    <input type="text" placeholder="Dano 3">
+                    <input id="meleeWeaponField" type="text" placeholder="Dano 3">
                 </div>
                 <div class="dmg-4">
-                    <input type="text" placeholder="Dano 4">
+                    <input id="specialField" type="text" placeholder="Dano 4">
                 </div>
                 <div class="img">
                     <div class="img-add">
-                    <img  src="images/Caminho 261.png" alt="ladrao de caminhao pendurado pela janela">
-                    </div>
-                    <div>
-                        <h4>Foto</h4>
+                        <div class="drop-zone">
+                            <span class="drop-zone__prompt">Foto</span>
+                            <input type="file" name="myFile" class="drop-zone__input">
+                        </div>
                     </div>
                 </div>
                 <div class="btn-container">
                     <div>
-                        <button class="btn1" type="submit">Cancelar</button>
+                        <button class="btn1" id="CancelAddAgentButton" type="submit">Cancelar</button>
                     </div>
                     <div>
-                        <button class="btn2" type="submit">Salvar</button>
+                        <button class="btn2 closeModalBtnSave" id="addAgentButton" type="submit">Salvar</button>
                     </div>
                 </div>
                 <span class="modal-newAgent-close">X</p>
         </div>
     </div>
-
-
     <main>
-        <section class="agents-bg">
-            <div class="agents-container">
+        <section class="agents-bg-newAgent">
+            <div class="agents-container-newAgent">
                 <div>
                     <h2 class="tittle title-agents">Agentes</h2>
                 </div>
                 <div class="search-box">
-                    <input type="text" id="site-search" name="q" placeholder="Pesquisar">
+                    <input type="text" class="fieldSearch" id="site-search" name="q" placeholder="Pesquisar agentes...">
                 </div>
                 <div class="search-container">
                     <fieldset class="">
-                        <legend>Filtrar Agentes</legend>
-                        <select>
-                            <option value="volvo">Função</option>
-                            <option value="volvo">Duelista</option>
-                            <option value="volvo">Sentinela</option>
-                            <option value="volvo">Controlador</option>
-                            <option value="volvo">Iniciador</option>
+                        <legend>Filtrar agentes</legend>
+                        <select class="filter-Habilit">
+                            <option value="volvo">Selecione uma Habilidade</option>
+                            <option value="volvo">Arma primaria</option>
+                            <option value="volvo">Arma Secundaria</option>
+                            <option value="volvo">Arma Branca</option>
+                            <option value="volvo">Especial</option>
                         </select>
-                        <select>
+                        <select class="filter-selectFilter">
                             <option value="volvo">Selecione um filtro</option>
-                            <option value="volvo">Duelista</option>
-                            <option value="volvo">Sentinela</option>
-                            <option value="volvo">Controlador</option>
-                            <option value="volvo">Iniciador</option>
+                            <option value="volvo">Maior que</option>
+                            <option value="volvo">Menor que</option>
                         </select>
-                        <input type="text" placeholder="Informe o valor do dano">
-                        <input type="submit" value="Filtrar">
+                        <input class="filter-dmg" type="text" placeholder="Informe o valor do dano">
+                        <buton class="filter-btn" type="submit">Filtrar</buton>
                     </fieldset>
                 </div>
                 <div id="cardContainer">

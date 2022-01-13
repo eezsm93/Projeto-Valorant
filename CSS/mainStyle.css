@@ -76,8 +76,6 @@ img{
     
 }
 
-
-
 .header-nav ul li a{
     color: white;
 }
@@ -99,7 +97,7 @@ img{
     text-transform: uppercase;
     font-size: 0.875em;
     font-weight: normal;
-
+    cursor: pointer;
 }
 
 .btn:hover{
@@ -249,6 +247,10 @@ img{
     
 }
 
+.agentCard:hover{
+}
+
+
 .title-agents{
     position: relative;
 }
@@ -271,9 +273,13 @@ img{
     position: relative;
     z-index: 2;
     cursor: pointer
-
-    
   }
+
+  .agentCard:hover{
+    border: 1px solid #E13157;
+  }
+
+
 
   .seeAllAgentCards{
     width: 250px;
@@ -348,13 +354,18 @@ img{
   }
   
   .agentImage{
-    width: 100%;
+    
     border: 1px solid #133052;
   }
+
   .agentImage{
     width: 100%;
     padding: 2px;
     border: 1px solid #133052;
+  }
+
+  .agentImage:hover{
+    transform: scale(1.05);
   }
 
   .maps-cards{
