@@ -308,8 +308,10 @@ var cardContainerElement = document.getElementById("cardContainer");
 var agents = myData.data.agents;
 var maps = myData.data.maps;
 var guns = myData.data.guns;
-var gunsContainerElement = document.getElementById("gunsContainerElement");
+var gunsContainerElement = document.getElementById("gunsContainer");
 var mapContainerElement = document.getElementById("mapsContainer");
+
+
 
 cardContainerElement.innerHTML += ""
 
@@ -386,18 +388,33 @@ var closeModalNewAgent = document.querySelector(".modal-close-new-agent");
 //   modalBackNewAgent.classList.remove("bg-active");
 // });
 
-guns.primaryGun.forEach(function(path){
-  gunsContainerElement.innerHTML = `
-  <div class="weapons-left">
-  <h4 class="weapon-tittle">Arma primaria</h4>
-  <div class="weapons-card">
-      <img class="arrow-left" src="images/Caminho 255.svg">
-      <div class="weapons-border">
-      <img class="weapons-img" src="${path}">
-      </div>
-      <img class="arrow-right" src="images/Caminho 256.svg">
-  </div>
-<div class="weapons-right">
-  <img src="images/V_AGENTS_587x900_Cypher.png">
-</div>`;
+
+primaryWeaponImg = document.getElementById("primaryWeaponImg");
+secundaryWeaponImg = document.getElementById("secundaryWeaponImg");
+stellWeaponImg = document.getElementById("stellWeaponImg");
+
+guns.primaryGun.forEach(function(path){ 
+  primaryWeaponImg.innerHTML = `<div class="gunImg">
+    <img  src="${path}"/>
+  </div>`;
 });
+
+guns.secondaryGun.forEach(function(path,index){ 
+  secundaryWeaponImg.innerHTML = `
+  <img class="gunImg" gun="${index}" src="${path}"/>
+  `;
+});
+
+guns.steel.forEach(function(path){ 
+  stellWeaponImg.innerHTML = `
+  <img class="gunImg" src="${path}"/>
+  `;
+});
+
+
+
+
+
+
+
+

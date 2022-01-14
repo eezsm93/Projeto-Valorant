@@ -307,7 +307,10 @@ var myData = JSON.parse(myJson);
 
 var agents = myData.data.agents;
 
+
+
 //CAPTURAR OS ELEMENTOS
+
 var cardContainerElement = document.getElementById("cardContainer");
 var modalBack = document.querySelector(".modal-back");
 var closeModal = document.querySelector(".modal-close");
