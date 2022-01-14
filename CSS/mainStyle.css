@@ -81,13 +81,8 @@ img{
   position: absolute;
   top: 85%;
   left: 25%
- 
-  
 
 }
-
-
-
 
 .btn{
     color: white;
@@ -552,19 +547,25 @@ img{
     background: white;
     border-radius: 5px;
     display: grid;
-    padding: 25px;
-    padding-left: 50px;
+    padding: 55px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     "suport-title suport-title vazio"
+    "suport-title suport-title lala"
     "supName supLastName supImg"
     "supMail supNickName supImg"
     "supSubject supSubject supImg"
     "supTxt supTxt supImg"
     "nada supBtn nadinha"
     ;
-    gap: 8px;
-    align-items: center;
+    gap: 15px;
+    grid-template-rows: 50px;
+
+}
+
+.suport-bg::placeholder{
+  color: #04254C;
+  font-size: 1.25em;
 }
 
 .suport-title{
@@ -572,6 +573,23 @@ img{
   grid-area: suport-title;
   text-transform: uppercase;
   font-size: 3em;
+  color: #04254C;
+  font-size: 1.25em;
+}
+
+.suportFontStyle{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  font-size: 1em;
+  border: 1px solid #133052;
+  border-radius: 5px;
+  opacity: 1;
+  font-family: roboto;
+
+}
+
+.suportFontStyle::placeholder{
+  color:#133052;
+  padding-left: 2px;
 }
 
 .supName{
@@ -634,7 +652,6 @@ img{
   border: 1px solid #E13157;
   border-radius: 5px;
   opacity: 1;
-  text-transform: uppercase;
   font-size: 1em;
   font-weight: normal;
   padding: 15px 30px 15px 30px;

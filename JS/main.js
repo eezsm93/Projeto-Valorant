@@ -342,9 +342,6 @@ maps.forEach(function (path) {
 });
 
 
-
-
-
 var modalBack = document.querySelector(".modal-back");
 var closeModal = document.querySelector(".modal-close");
 closeModal.addEventListener("click", function () {
@@ -393,11 +390,13 @@ primaryWeaponImg = document.getElementById("primaryWeaponImg");
 secundaryWeaponImg = document.getElementById("secundaryWeaponImg");
 stellWeaponImg = document.getElementById("stellWeaponImg");
 
-guns.primaryGun.forEach(function(path){ 
-  primaryWeaponImg.innerHTML = `<div class="gunImg">
+guns.primaryGun.forEach(function(path, index){ 
+  primaryWeaponImg.innerHTML = `<div class="gunImg" gunP="${index}">
     <img  src="${path}"/>
   </div>`;
+
 });
+
 
 guns.secondaryGun.forEach(function(path,index){ 
   secundaryWeaponImg.innerHTML = `
@@ -415,6 +414,28 @@ guns.steel.forEach(function(path){
 
 
 
+const slider = guns.primaryGun;
+var i = 0;
+var sliderImg = document.querySelector("#mainImg");
+sliderImg.addEventListener('click', function (e) {
+  if (i < (slider.length - 1)) {
+      this.src = slider[++i].path;
+      console.log(path);
+      document.querySelector('#text-img').innerText = "image " + i.toString() + " src : " + slider[i].path
+  }
+});
 
-
-
+let prevImg = document.querySelector("#previous");
+prevImg.addEventListener('click', function (e) {
+  if (i > 0) {
+      sliderImg.src = slider[--i].path;
+      document.querySelector('#text-img').innerText = "image " + i.toString() + " src : " + slider[i].path
+  }
+});
+let nextImg = document.querySelector("#next");
+nextImg.addEventListener('click', function (e) {
+  if (i < (slider.length - 1)) {
+      sliderImg.src = slider[++i].path;
+      document.querySelector('#text-img').innerText = "image " + i.toString() + " src : " + slider[i].path;
+  }
+});
