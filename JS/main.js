@@ -397,7 +397,6 @@ guns.primaryGun.forEach(function(path, index){
 
 });
 
-
 guns.secondaryGun.forEach(function(path,index){ 
   secundaryWeaponImg.innerHTML = `
   <img class="gunImg" gun="${index}" src="${path}"/>
@@ -409,8 +408,6 @@ guns.steel.forEach(function(path){
   <img class="gunImg" src="${path}"/>
   `;
 });
-
-
 
 
 

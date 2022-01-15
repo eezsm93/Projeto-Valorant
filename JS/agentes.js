@@ -318,9 +318,9 @@ var modalBackNewAgent = document.querySelector(".modal-newAgent");
 var closeModalNewAgent = document.querySelector(".modal-newAgent-close");
 var closeModalBtnSave = document.querySelector(".closeModalBtnSave");
 var addAgentButton = document.getElementById("addAgentButton");
+var nameInputFilter = document.getElementById("site-search");
 var imageFile = null;
 
-console.log("closeModalBtnSave");
 
 function refreshAgentsList() {
 cardContainerElement.innerHTML = "";
@@ -380,10 +380,6 @@ modalBack.classList.remove("bg-active");
 closeModalNewAgent.addEventListener("click", function () {
 modalBackNewAgent.classList.remove("bg-active");
 });
-
-
-
-
 
 addAgentButton.addEventListener("click", function (e) {
 var primaria = parseInt(document.getElementById("prymaryWeaponField").value);
@@ -463,10 +459,10 @@ var newAgent = {
 myData.data.agents.push(newAgent);
 myJson = JSON.stringify(myData);
 
-refreshAgentsList();
+refreshAgentsList(agents);
 });
 
-refreshAgentsList();
+refreshAgentsList(agents);
 
 document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
 const dropZoneElement = inputElement.closest(".drop-zone");
@@ -544,3 +540,20 @@ document.getElementById("addAgentButton").addEventListener("click", function(){
 document.getElementById("CancelAddAgentButton").addEventListener("click", function(){
   modalBackNewAgent.classList.remove("bg-active");
 });
+
+nameInputFilter.addEventListener("keyup", function(){
+  var filteredAgents = filterAgentsByName();
+})
+
+  function filterAgentsByName() {
+    var name = nameInputFilter.value;
+    if(name.length > 0){
+      return agents.filter(function(agent){
+          return agent.name.match(name);
+        })
+    } else {
+      return agents;
+    }
+  }
+
+  refreshAgentsList(filteredAgents);

@@ -463,6 +463,7 @@ img{
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
 }
 
@@ -521,6 +522,7 @@ img{
     align-items: center;
     color: white;
     text-transform: uppercase;
+    cursor: pointer;
 
 }
 
@@ -662,8 +664,6 @@ img{
   color: black;
 
 }
-
-
 
 
 .suport-title{
