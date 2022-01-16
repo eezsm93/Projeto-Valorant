@@ -307,10 +307,7 @@ var myData = JSON.parse(myJson);
 
 var agents = myData.data.agents;
 
-
-
 //CAPTURAR OS ELEMENTOS
-
 var cardContainerElement = document.getElementById("cardContainer");
 var modalBack = document.querySelector(".modal-back");
 var closeModal = document.querySelector(".modal-close");
@@ -321,239 +318,317 @@ var addAgentButton = document.getElementById("addAgentButton");
 var nameInputFilter = document.getElementById("site-search");
 var imageFile = null;
 
+console.log("closeModalBtnSave");
 
-function refreshAgentsList() {
-cardContainerElement.innerHTML = "";
-cardContainerElement.innerHTML += `<div class="newAgentCard">
+function refreshAgentsList(agents) {
+  cardContainerElement.innerHTML = "";
+  cardContainerElement.innerHTML += `<div class="newAgentCard">
     <img class="agentImage" src="images/Caminho 261.png"/>
     <h4><b>Adicionar</b></h4>
     </div>`;
 
-agents.forEach(function (item, index /*, arr */) {
-  //map é um loop que executa uma função pra cada item do array
-  cardContainerElement.innerHTML += `
+  agents.forEach(function (item, index /*, arr */) {
+    //map é um loop que executa uma função pra cada item do array
+    cardContainerElement.innerHTML += `
           <div class="agentCard" agent="${index}">
+            <div>
             <img class="agentImage" src="${item.image}"/>
-            <h4>${item.name}</h4>
+            <h4 class="agentTittle">${item.name}</h4>
+            </div>
           </div>`;
-});
-var newAgentCard = document.querySelector(".newAgentCard");
-newAgentCard.removeEventListener("click", function () {});
-newAgentCard.addEventListener("click", function () {
-  modalBackNewAgent.classList.add("bg-active");
-});
-
-document.querySelectorAll(".agentCard").forEach(function (item) {
-  item.removeEventListener("click", function () {});
-  item.addEventListener("click", (event) => {
-    var functionField = document.getElementById("field-function");
-    var descriptionField = document.getElementById("field-description");
-    var primaryDmgField = document.getElementById("primary-dmg-field");
-    var secondaryDmgField = document.getElementById("secondary-dmg-field");
-    var meleeDmgField = document.getElementById("melee-dmg-field");
-    var specialDmgField = document.getElementById("special-dmg-field");
-    var agentImgElement = document.getElementById("agent-img-element");
-
-    var agent = agents[item.getAttribute("agent")];
-
-    functionField.innerHTML = agent.function;
-    descriptionField.innerHTML = agent.description;
-    primaryDmgField.innerHTML = agent.skills[0].damage + " Dano";
-    secondaryDmgField.innerHTML = agent.skills[1].damage + " Dano";
-    meleeDmgField.innerHTML = agent.skills[2].damage + " Dano";
-    specialDmgField.innerHTML = agent.skills[3].damage + " Dano";
-    modalBack.classList.add("bg-active");
-    if (typeof agent.image === "string") {
-      agentImgElement.src = agent.image;
-    } else {
-      agentImgElement.style.backgroundImage = `url('${imageFile}')`;
-    }
   });
-});
+  var newAgentCard = document.querySelector(".newAgentCard");
+  newAgentCard.removeEventListener("click", function () {});
+  newAgentCard.addEventListener("click", function () {
+    modalBackNewAgent.classList.add("bg-active");
+  });
+
+  document.querySelectorAll(".agentCard").forEach(function (item) {
+    item.removeEventListener("click", function () {});
+    item.addEventListener("click", (event) => {
+      var functionField = document.getElementById("field-function");
+      var descriptionField = document.getElementById("field-description");
+      var primaryDmgField = document.getElementById("primary-dmg-field");
+      var secondaryDmgField = document.getElementById("secondary-dmg-field");
+      var meleeDmgField = document.getElementById("melee-dmg-field");
+      var specialDmgField = document.getElementById("special-dmg-field");
+      var agentImgElement = document.getElementById("agent-img-element");
+
+      var agent = agents[item.getAttribute("agent")];
+
+      functionField.innerHTML = agent.function;
+      descriptionField.innerHTML = agent.description;
+      primaryDmgField.innerHTML = agent.skills[0].damage + " Dano";
+      secondaryDmgField.innerHTML = agent.skills[1].damage + " Dano";
+      meleeDmgField.innerHTML = agent.skills[2].damage + " Dano";
+      specialDmgField.innerHTML = agent.skills[3].damage + " Dano";
+      modalBack.classList.add("bg-active");
+      if (typeof agent.image === "string") {
+        agentImgElement.src = agent.image;
+      } else {
+        agentImgElement.style.backgroundImage = `url('${imageFile}')`;
+      }
+    });
+  });
 }
 
 //EVENT LISTENERS
 closeModal.addEventListener("click", function () {
-modalBack.classList.remove("bg-active");
+  modalBack.classList.remove("bg-active");
 });
 
 closeModalNewAgent.addEventListener("click", function () {
-modalBackNewAgent.classList.remove("bg-active");
+  modalBackNewAgent.classList.remove("bg-active");
 });
 
 addAgentButton.addEventListener("click", function (e) {
-var primaria = parseInt(document.getElementById("prymaryWeaponField").value);
-var secundaria = parseInt(
-  document.getElementById("secondaryWeaponField").value
-);
-var branca = parseInt(document.getElementById("meleeWeaponField").value);
-var especial = parseInt(document.getElementById("specialField").value);
+  var primaria = parseInt(document.getElementById("prymaryWeaponField").value);
+  var secundaria = parseInt(
+    document.getElementById("secondaryWeaponField").value
+  );
+  var branca = parseInt(document.getElementById("meleeWeaponField").value);
+  var especial = parseInt(document.getElementById("specialField").value);
 
-var nome = document.getElementById("nomeField").value;
-var funcao = document.getElementById("functionSelect").value;
-var descricao = document.getElementById("descriptionField").value;
-//var imagem = parseInt(document.getElementById("specialField").value);
+  var nome = document.getElementById("nomeField").value;
+  var funcao = document.getElementById("functionSelect").value;
+  var descricao = document.getElementById("descriptionField").value;
+  //var imagem = parseInt(document.getElementById("specialField").value);
+  var filterAgentsButton = document.getElementById("filterAgentsButton");
+  if (!nome.length) {
+    alert("Escreva um nome");
+    return;
+  }
 
+  if (!funcao.length) {
+    alert("Selecione uma função");
+    return;
+  }
+  if (!descricao.length) {
+    alert("Escreva uma descrição");
+    return;
+  }
 
-if (!nome.length) {
-  alert("Escreva um nome");
-  return;
-}
+  if (isNaN(primaria) || primaria <= 0) {
+    alert("Digite um valor numérico maior que zero para arma primária");
+    return;
+  }
 
-if (!funcao.length) {
-  alert("Selecione uma função");
-  return;
-}
-if (!descricao.length) {
-  alert("Escreva uma descrição");
-  return;
-}
+  if (isNaN(secundaria) || secundaria <= 0) {
+    alert("Digite um valor numérico maior que zero para arma secundária");
+    return;
+  }
+  if (isNaN(branca) || branca <= 0) {
+    alert("Digite um valor numérico maior que zero para arma branca");
+    return;
+  }
+  if (isNaN(especial) || especial <= 0) {
+    alert("Digite um valor numérico maior que zero para o especial");
+    return;
+  }
 
-if (isNaN(primaria) || primaria <= 0) {
-  alert("Digite um valor numérico maior que zero para arma primária");
-  return;
-}
+  if (!imageFile) {
+    alert("adicione uma imagem");
+    return;
+  }
 
-if (isNaN(secundaria) || secundaria <= 0) {
-  alert("Digite um valor numérico maior que zero para arma secundária");
-  return;
-}
-if (isNaN(branca) || branca <= 0) {
-  alert("Digite um valor numérico maior que zero para arma branca");
-  return;
-}
-if (isNaN(especial) || especial <= 0) {
-  alert("Digite um valor numérico maior que zero para o especial");
-  return;
-}
+  var newAgent = {
+    name: nome,
+    function: funcao,
+    description: descricao,
+    skills: [
+      {
+        type: 1,
+        damage: primaria,
+      },
+      {
+        type: 2,
+        damage: secundaria,
+      },
+      {
+        type: 3,
+        damage: branca,
+      },
+      {
+        type: 4,
+        damage: especial,
+      },
+    ],
+    image: imageFile,
+  };
+  myData.data.agents.push(newAgent);
+  myJson = JSON.stringify(myData);
 
-if (!imageFile) {
-  alert("adicione uma imagem");
-  return;
-}
+  agents = myData.data.agents;
 
-var newAgent = {
-  name: nome,
-  function: funcao,
-  description: descricao,
-  skills: [
-    {
-      type: 1,
-      damage: primaria,
-    },
-    {
-      type: 2,
-      damage: secundaria,
-    },
-    {
-      type: 3,
-      damage: branca,
-    },
-    {
-      type: 4,
-      damage: especial,
-    },
-  ],
-  image: imageFile,
-};
-myData.data.agents.push(newAgent);
-myJson = JSON.stringify(myData);
-
-refreshAgentsList(agents);
+  refreshAgentsList(agents);
 });
 
 refreshAgentsList(agents);
 
 document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
-const dropZoneElement = inputElement.closest(".drop-zone");
+  const dropZoneElement = inputElement.closest(".drop-zone");
 
-dropZoneElement.addEventListener("click", (e) => {
-  inputElement.click();
-});
+  dropZoneElement.addEventListener("click", (e) => {
+    inputElement.click();
+  });
 
-inputElement.addEventListener("change", (e) => {
-  if (inputElement.files.length) {
-    updateThumbnail(dropZoneElement, inputElement.files[0]);
-  }
-});
+  inputElement.addEventListener("change", (e) => {
+    if (inputElement.files.length) {
+      updateThumbnail(dropZoneElement, inputElement.files[0]);
+    }
+  });
 
-dropZoneElement.addEventListener("dragover", (e) => {
-  e.preventDefault();
-  dropZoneElement.classList.add("drop-zone--over");
-});
+  dropZoneElement.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZoneElement.classList.add("drop-zone--over");
+  });
 
-["dragleave", "dragend"].forEach((type) => {
-  dropZoneElement.addEventListener(type, (e) => {
+  ["dragleave", "dragend"].forEach((type) => {
+    dropZoneElement.addEventListener(type, (e) => {
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+
+  dropZoneElement.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    if (e.dataTransfer.files.length) {
+      inputElement.files = e.dataTransfer.files;
+      updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+    }
+
     dropZoneElement.classList.remove("drop-zone--over");
   });
 });
 
-dropZoneElement.addEventListener("drop", (e) => {
-  e.preventDefault();
+function updateThumbnail(dropZoneElement, file) {
+  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
 
-  if (e.dataTransfer.files.length) {
-    inputElement.files = e.dataTransfer.files;
-    updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+  // First time - remove the prompt
+  if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+    dropZoneElement.querySelector(".drop-zone__prompt").remove();
   }
 
-  dropZoneElement.classList.remove("drop-zone--over");
-});
-});
+  // First time - there is no thumbnail element, so lets create it
+  if (!thumbnailElement) {
+    thumbnailElement = document.createElement("div");
+    thumbnailElement.classList.add("drop-zone__thumb");
+    dropZoneElement.appendChild(thumbnailElement);
+  }
 
-function updateThumbnail(dropZoneElement, file) {
-let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+  thumbnailElement.dataset.label = file.name;
 
-// First time - remove the prompt
-if (dropZoneElement.querySelector(".drop-zone__prompt")) {
-  dropZoneElement.querySelector(".drop-zone__prompt").remove();
+  // Show thumbnail for image files
+  if (file.type.startsWith("image/")) {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+      imageFile = reader.result;
+    };
+  } else {
+    thumbnailElement.style.backgroundImage = null;
+    imageFile = null;
+  }
 }
 
-// First time - there is no thumbnail element, so lets create it
-if (!thumbnailElement) {
-  thumbnailElement = document.createElement("div");
-  thumbnailElement.classList.add("drop-zone__thumb");
-  dropZoneElement.appendChild(thumbnailElement);
-}
+document
+  .getElementById("addAgentButton")
+  .addEventListener("click", function () {
+    modalBackNewAgent.classList.remove("bg-active");
+  });
 
-thumbnailElement.dataset.label = file.name;
-
-// Show thumbnail for image files
-if (file.type.startsWith("image/")) {
-  const reader = new FileReader();
-
-  reader.readAsDataURL(file);
-  reader.onload = () => {
-    thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-    imageFile = reader.result;
-  };
-} else {
-  thumbnailElement.style.backgroundImage = null;
-  imageFile = null;
-}
-}
-
-
-document.getElementById("addAgentButton").addEventListener("click", function(){
-  modalBackNewAgent.classList.remove("bg-active");
-});
-
-document.getElementById("CancelAddAgentButton").addEventListener("click", function(){
-  modalBackNewAgent.classList.remove("bg-active");
-});
+document
+  .getElementById("CancelAddAgentButton")
+  .addEventListener("click", function () {
+    modalBackNewAgent.classList.remove("bg-active");
+  });
 
 nameInputFilter.addEventListener("keyup", function(){
   var filteredAgents = filterAgentsByName();
+  filterAgentsBySkill(filteredAgents);
 })
 
-  function filterAgentsByName() {
-    var name = nameInputFilter.value;
-    if(name.length > 0){
-      return agents.filter(function(agent){
-          return agent.name.match(name);
-        })
-    } else {
-      return agents;
+filterAgentsButton.addEventListener("click", function () {
+  var filteredAgents = filterAgentsByName(agents);
+  filterAgentsBySkill(filteredAgents);
+});
+
+function filterAgentsByName() {
+  var name = nameInputFilter.value;
+  if(name.length > 0){
+    return agents.filter(function(agent){
+        return agent.name.match(name.toUpperCase());
+      })
+  } else {
+    return agents;
+  }
+}
+function filterAgentsBySkill(agents) {
+  var habilitySelectorFilter = document.getElementById(
+    "habilitySelectorFilter"
+  ).value;
+
+  var thresholdSelectorFilter = document.getElementById(
+    "thresholdSelectorFilter"
+  ).value;
+
+  var damageValueFilter = parseInt(
+    document.getElementById("damageValueFilter").value
+  );
+
+  var typeIndex = null;
+  var threshhold = null;
+
+    if(habilitySelectorFilter.length == 0 && thresholdSelectorFilter.length == 0 && isNaN(damageValueFilter)){
+      refreshAgentsList(agents);
+      return;
     }
+
+  switch (habilitySelectorFilter) {
+    case "primary":
+      typeIndex = 0;
+      break;
+    case "secondary":
+      typeIndex = 1;
+      break;
+    case "melee":
+      typeIndex = 2;
+      break;
+    case "special":
+      typeIndex = 3;
+      break;
+    default:
+      alert("Especifique uma habilidade para ser filtrada.");
+      return;
+      break;
   }
 
+  switch (thresholdSelectorFilter) {
+    case "above":
+      threshhold = true;
+      break;
+    case "under":
+      threshhold = false;
+      break;
+    default:
+      alert("especifique o corte de filtro.");
+      return;
+      break;
+  }
+
+  if (isNaN(damageValueFilter) || damageValueFilter <= 0) {
+    alert("Especifique um valor de dano que seja um número acima de zero.");
+  }
+
+  var filteredAgents = agents.filter(function (agent) {
+    console.log(agent.skills[typeIndex].damage);
+    if (threshhold) {
+      return agent.skills[typeIndex].damage > damageValueFilter;
+    } else {
+      return agent.skills[typeIndex].damage < damageValueFilter;
+    }
+  });
   refreshAgentsList(filteredAgents);
+}

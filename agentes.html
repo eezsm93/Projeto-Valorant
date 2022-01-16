@@ -173,20 +173,20 @@
                 <div class="search-container">
                     <fieldset class="">
                         <legend>Filtrar agentes</legend>
-                        <select class="filter-Habilit">
-                            <option value="volvo">Selecione uma Habilidade</option>
-                            <option value="volvo">Arma primaria</option>
-                            <option value="volvo">Arma Secundaria</option>
-                            <option value="volvo">Arma Branca</option>
-                            <option value="volvo">Especial</option>
+                        <select id="habilitySelectorFilter" class="filter-Hability">
+                            <option value="">Selecione uma Habilidade</option>
+                            <option value="primary">Arma primaria</option>
+                            <option value="secondary">Arma Secundaria</option>
+                            <option value="melee">Arma Branca</option>
+                            <option value="special">Especial</option>
                         </select>
-                        <select class="filter-selectFilter">
-                            <option value="volvo">Selecione um filtro</option>
-                            <option value="volvo">Maior que</option>
-                            <option value="volvo">Menor que</option>
+                        <select id="thresholdSelectorFilter" class="filter-selectFilter">
+                            <option value="">Selecione um filtro</option>
+                            <option value="above">Maior que</option>
+                            <option value="under">Menor que</option>
                         </select>
-                        <input class="filter-dmg" type="text" placeholder="Informe o valor do dano">
-                        <buton class="filter-btn" type="submit">Filtrar</buton>
+                        <input id="damageValueFilter" class="filter-dmg" type="text" placeholder="Informe o valor do dano">
+                        <button id="filterAgentsButton" class="filter-btn" type="submit">Filtrar</button>
                     </fieldset>
                 </div>
                 <div id="cardContainer">

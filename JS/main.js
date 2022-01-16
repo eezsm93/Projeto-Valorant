@@ -319,8 +319,10 @@ agents.forEach(function (item, index /*, arr */) {
   //map é um loop que executa uma função pra cada item do array
   cardContainerElement.innerHTML += `
     <div class="agentCard" agent="${index}">
+      <div>
       <img class="agentImage" src="${item.image}"/>
-      <h4>${item.name}</h4>
+      <h4 class="agentTittle">${item.name}</h4>
+      <div>
     </div>`;
 });
 
@@ -411,28 +413,50 @@ guns.steel.forEach(function(path){
 
 
 
-const slider = guns.primaryGun;
-var i = 0;
-var sliderImg = document.querySelector("#mainImg");
-sliderImg.addEventListener('click', function (e) {
-  if (i < (slider.length - 1)) {
-      this.src = slider[++i].path;
-      console.log(path);
-      document.querySelector('#text-img').innerText = "image " + i.toString() + " src : " + slider[i].path
-  }
+var supFormModalBg = document.querySelector(".supFormModal-bg");
+var supFromModalClose = document.querySelector(".modal-close-form")
+var formBtnSend = document.getElementById("formSendBtn");
+
+formBtnSend.addEventListener("click", function(e){
+  var formName = document.getElementById("formName").value;
+  var formLastName = document.getElementById("formLastName").value;
+  var formEmail = document.getElementById("formEmail").value;
+  var formNickName = document.getElementById("formNickName").value;
+  var formSubject = document.getElementById("formSubjectId").value;
+  var formTxt = document.getElementById("formTxtId").value;
+  
+  supFormModalBg.classList.add("bg-active");
+  supFromModalClose.addEventListener("click", function(){
+  supFormModalBg.classList.remove("bg-active");
+  });
+
+
+  document.querySelector("#formNameModal").innerHTML = `<div>
+  <p>${formName + " " + formLastName}</p>
+  </div>
+  `
+
+  document.querySelector("#formEmailModal").innerHTML = `<div>
+  <p>${formEmail}</p>
+  </div>
+  `
+
+  document.querySelector("#formNickNameModal").innerHTML = `<div>
+  <p>${formNickName}</p>
+  </div>
+  `
+
+  document.querySelector("#formSubjectModal").innerHTML = `<div>
+  <p>${formSubject}</p>
+  </div>
+  `
+
+  document.querySelector("#formTxtModal").innerHTML = `<div>
+  <p>${formTxt}</p>
+  </div>
+  `
 });
 
-let prevImg = document.querySelector("#previous");
-prevImg.addEventListener('click', function (e) {
-  if (i > 0) {
-      sliderImg.src = slider[--i].path;
-      document.querySelector('#text-img').innerText = "image " + i.toString() + " src : " + slider[i].path
-  }
-});
-let nextImg = document.querySelector("#next");
-nextImg.addEventListener('click', function (e) {
-  if (i < (slider.length - 1)) {
-      sliderImg.src = slider[++i].path;
-      document.querySelector('#text-img').innerText = "image " + i.toString() + " src : " + slider[i].path;
-  }
-});
+
+
+  

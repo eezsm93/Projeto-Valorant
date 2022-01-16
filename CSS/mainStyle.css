@@ -34,6 +34,8 @@ img{
     display: flex;
     flex-wrap: wrap;
     background-image: url(../images/Background.png);
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 8px rgba(0,0,0,0.1);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -79,8 +81,9 @@ img{
 
 .header-valorant{
   position: absolute;
-  top: 85%;
-  left: 25%
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
 
 }
 
@@ -108,8 +111,48 @@ img{
     margin: 0 auto;
     text-align: center;
   }
+
+  .supFormModal-bg{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s;
+    z-index: 10;
+
+}
+
+.supFormModal-container{
+    display: flex;
+    background-color: white;
+    width: 75%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    position: relative;
+}
+
+.modal-close-form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
   
-  .modal-back, .modal-back-new-agent {
+  .modal-back, .modal-back-new-agent{
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -131,7 +174,7 @@ img{
     opacity: 1;
   }
   
-  .modal-container01 {
+  .modal-container01{
     display: flex;
     background-color: white;
     width: 75%;
@@ -242,13 +285,13 @@ img{
 .agents-container{
     margin: 0 auto;
     max-width: 76.5em;
-    
 }
 
 
 .title-agents{
     position: relative;
 }
+
 
 .tittle{
     text-decoration: none;
@@ -261,17 +304,27 @@ img{
 }
 
   .agentCard {
-    border: 1px solid #133052;
-    width: 250px;
-    height: 300px;
-    margin-bottom: 45px;
+    border: solid 2px #133052;
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
     z-index: 2;
-    cursor: pointer
+    cursor: pointer;
   }
 
   .agentCard:hover{
     border: 1px solid #E13157;
+  }
+
+  .agentCard, .newAgentCard, .seeAllAgentCards{
+    flex: 1 1 calc(25% - 20px);
+    margin: 0 auto;
+    margin: 20px;
+    max-width: 265px;
+    max-height: 350px;
+    min-width: 265px;
+    min-height: 350px;
+    
   }
 
 
@@ -286,7 +339,7 @@ img{
     border: solid 1px #E13157;
     position: relative;
     z-index: 2;
-    cursor: pointer
+    cursor: pointer;
   }
 
   .seeAllAgentCards img{
@@ -295,13 +348,14 @@ img{
     margin-right: 15px;
     position: relative;
     z-index: 2;
-    cursor: pointer
+    cursor: pointer;
   }
 
   .seeAllAgentCards h4{
     color: #E13157;
     font-size: 1.5em;
     font-weight: normal;
+    font-size: 1.5em;
   } 
 
   .newAgentCard{
@@ -314,23 +368,24 @@ img{
     border: solid 1px #E13157;
     position: relative;
     z-index: 2;
-    cursor: pointer
-    
+    cursor: pointer;
+
   }
 
   .newAgentCard img{
     width: 25px;
     height: 25px;
-    margin-right: 15px;
+    margin-right: 10px;
     position: relative;
     z-index: 2;
-    cursor: pointer
+    cursor: pointer;
   }
 
   .newAgentCard h4{
     color: #E13157;
     font-size: 1.5em;
     font-weight: normal;
+    font-size: 1.5em;
 
   }
 
@@ -339,24 +394,12 @@ img{
     text-transform: uppercase;
     text-align: center;
     font-weight: 500;
+    font-size: 1.5em;
   }
   
   #cardContainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-between;
-  }
-  
-  .agentImage{
-    
-    border: 1px solid #133052;
-  }
-
-  .agentImage{
-    width: 100%;
-    padding: 2px;
-    border: 1px solid #133052;
   }
 
   .agentImage:hover{
@@ -672,3 +715,115 @@ img{
     font-size: 3em;
     font-style: italic;
 }
+
+.supFormModal-container{
+  margin: 0 auto;
+  background: white;
+  border-radius: 5px;
+  display: grid;
+  padding: 55px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  "fullNameModal formNameModal imgModalSup"
+  "emailModal formEmailModal imgModalSup"
+  "nickNameModal formNickNameModal imgModalSup"
+  "subjectModal formSubjectModal imgModalSup"
+  "descriptionModal nadinha imgModalSup"
+  "formTxtModal formTxtModal imgModalSup"
+  "none supBtnContainerModal imgModalSup"
+  ;
+  gap: 15px;
+  grid-template-rows: 50px;
+
+}
+
+.fullNameModal{
+  display: grid;
+  
+}
+
+#formNameModal{
+  display: grid;
+  grid-area: formNameModal;
+}
+
+.emailModal{
+  display: grid;
+  grid-area: emailModal;
+}
+
+#formEmailModal{
+  display: grid;
+  grid-area: formEmailModal;
+}
+
+.nickNameModal{
+  display: grid;
+  grid-area: nickNameModal;
+}
+
+#formNickNameModal{
+  display: grid;
+  grid-area: formNickNameModal;
+}
+
+.subjectModal{
+  display: grid;
+  grid-area: subjectModal;
+}
+
+#formSubjectModal{
+  display: grid;
+  grid-area: formSubjectModal;
+}
+.descriptionModal{
+  display: grid;
+  grid-area: descriptionModal;
+}
+#formTxtModal{
+  display: grid;
+  grid-area: formTxtModal;
+}
+
+.imgModalSup{
+  display: grid;
+  grid-area: imgModalSup;
+}
+
+.supBtnContainerModal{
+  display: grid;
+  grid-area: supBtnContainerModal;
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  align-self: center;
+}
+
+.cancelBtnModalSup{
+color: #133052;
+background-color: white;
+border-radius: 3px;
+text-align: center;
+padding: 10px 15px 10px 15px;
+opacity: 1;
+align-items: center;
+font-size: 0.8em;
+text-transform: uppercase;
+cursor: pointer;
+
+}
+
+.sendBtnModalSup{
+  margin-left: 35px;
+  color: white;
+  background-color: #E13157;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+  opacity: 1;
+  align-items: center;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+

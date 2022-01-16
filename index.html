@@ -205,8 +205,6 @@
                     </div>
                 </div>
             </section>
-
-
             <section class="suport">
                 <div class="suport-container">
                     <div class="suport-bg">
@@ -214,25 +212,25 @@
                             <h2>Suporte</h2>
                         </div>
                         <div class="supName">
-                            <input type="text" placeholder="Nome" class="suportFontStyle">
+                            <input id="formName" type="text" placeholder="Nome" class="suportFontStyle">
                         </div>
                         <div class="supLastName">
-                            <input type="text" placeholder="Sobrenome" class="suportFontStyle">
+                            <input id="formLastName" type="text" placeholder="Sobrenome" class="suportFontStyle">
                         </div>
                         <div class="supMail">
-                            <input type="e-mail" placeholder="E-mail" class="suportFontStyle">
+                            <input id="formEmail" type="e-mail" placeholder="E-mail" class="suportFontStyle">
                         </div>
                         <div class="supNickName">
-                            <input type="text" placeholder="Apelido de Jogador" class="suportFontStyle">
+                            <input id="formNickName" type="text" placeholder="Apelido de Jogador" class="suportFontStyle">
                         </div>
                         <div class="supSubject">
-                            <input type="text" placeholder="Assunto" class="suportFontStyle">
+                            <input id="formSubjectId" type="text" placeholder="Assunto" class="suportFontStyle">
                         </div>
                         <div class="supTxt">
-                            <textarea class="suportFontStyle description" rows="5" cols="95" placeholder="Descrição" ></textarea>
+                            <textarea id="formTxtId" class="suportFontStyle description" rows="5" cols="95" placeholder="Descrição" ></textarea>
                         </div>
                         <div class="supBtn">
-                            <input type="submit" value="Enviar" class="btn-form">
+                            <input id="formSendBtn" type="submit" value="Enviar" class="btn-form">
                         </div>
                         <div class="supImg">
                             <img  src="images/valorant-collectible-variable-removed-spray.png">
@@ -241,6 +239,50 @@
                 </div>
             </section>
         </div>
+
+        <div class="supFormModal-bg">
+            <div class="supFormModal-container">
+                <div class="fullNameModal">
+                    <h4>Nome Completo:</h4>
+                </div> 
+                <div id="formNameModal">
+                </div>
+                <div class="emailModal">
+                    <h4>E-mail:</h4>
+                </div>
+                <div id="formEmailModal">
+                </div>
+                <div class="nickNameModal">
+                    <h4>Apelido de Jogador:</h4>
+                </div>
+                <div id="formNickNameModal">
+                </div>
+                <div class="subjectModal">
+                    <h4>Assunto:</h4>
+                </div>
+                <div id="formSubjectModal">
+                </div>
+                <div class="descriptionModal">
+                    <h4>Descrição:</h4>
+                </div>
+                <div id="formTxtModal">
+                </div>
+                <div class="imgModalSup">
+                    <img  src="images/valorant-collectible-variable-removed-spray.png">
+                </div>
+                <div class="supBtnContainerModal">
+                    <div>
+                        <button class="cancelBtnModalSup" type="submit">Cancelar</button>
+                    </div>
+                    <div>
+                        <button class="sendBtnModalSup closeModalBtnSave" id="" type="submit">Enviar</button>
+                    </div>
+                </div>
+                <span class="modal-close-form">X</span>
+            </div>
+            
+        </div>
+        
     </main>
 
     <footer>

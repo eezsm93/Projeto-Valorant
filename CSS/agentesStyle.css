@@ -122,7 +122,6 @@
   .newAgentCard img {
     width: 25px;
     height: 25px;
-    margin-right: 15px;
     position: relative;
     z-index: 2;
     cursor: pointer;
@@ -388,6 +387,17 @@
     color:#133052;
 }
 
+.filter-Hability{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #133052;
+    border-radius: 5px;
+    font-size: 1em;
+    opacity: 1;
+    padding-right: 70px;
+    padding-left: 10px;
+    color:#133052;
+}
+
 .filter-selectFilter{
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #133052;
@@ -398,6 +408,9 @@
     padding-left: 10px;
     color:#133052;
 }
+
+
+
 
 .filter-Habilit{
     background: #FFFFFF 0% 0% no-repeat padding-box;
