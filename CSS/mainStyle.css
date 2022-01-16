@@ -469,6 +469,8 @@ img{
     font-weight: medium;
 }
 
+
+
 .arrow-left{
     padding-right: 26px;
     cursor: pointer;
@@ -488,10 +490,15 @@ img{
 }
 
 .weapons-card{
-    
     display: flex;
     flex-wrap: wrap;
 }
+
+.weapons-card a{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 .weapons-border{
   border: 1px solid #FFFFFF;

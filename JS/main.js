@@ -346,6 +346,9 @@ maps.forEach(function (path) {
 });
 
 
+
+
+
 var modalBack = document.querySelector(".modal-back");
 var closeModal = document.querySelector(".modal-close");
 closeModal.addEventListener("click", function () {
@@ -390,31 +393,32 @@ var closeModalNewAgent = document.querySelector(".modal-close-new-agent");
 // });
 
 
-primaryWeaponImg = document.getElementById("primaryWeaponImg");
+primaryWeaponImg = document.getElementById("primaryWeaponImgContainer");
 secundaryWeaponImg = document.getElementById("secundaryWeaponImg");
 stellWeaponImg = document.getElementById("stellWeaponImg");
 
-guns.primaryGun.filter(function(path, index){
-  let indexArma = path; 
-  primaryWeaponImg.innerHTML = `<div class="gunImg" gunP="${index}">
-    <img  src="${path}"/>
-  </div>`;
-
-
-  console.log(path);
-
+guns.primaryGun.forEach(function(path, index){
+  primaryWeaponImg.innerHTML += `
+  <div class="slidesPrimaryGun fade" gunsPrimary= ${index}>
+  <img src="${path}">
+</div>
+`;
 });
 
-guns.secondaryGun.forEach(function(path,index){ 
-  secundaryWeaponImg.innerHTML = `
-  <img class="gunImg" gun="${index}" src="${path}"/>
+guns.secondaryGun.forEach(function(path, index){ 
+  secundaryWeaponImg.innerHTML += `
+  <div class="sliderSecondaryGun fade" gunsSecundary= ${index}>
+  <img src="${path}">
+  </div>
   `;
 });
 
-guns.steel.forEach(function(path){ 
-  stellWeaponImg.innerHTML = `
-  <img class="gunImg" src="${path}"/>
-  `;
+guns.steel.forEach(function(path, index){
+  stellWeaponImg.innerHTML += `
+  <div class="sliderSteel fade" gunsSteel= ${index}>
+  <img src="${path}"> 
+  </div>
+`;
 });
 
 
@@ -522,4 +526,90 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
+}
+
+//Slider Primaias
+
+var slideIndexSecondary = 1;
+showSlidesSecondary(slideIndexSecondary);
+
+function plusSlidesSecondary(n) {
+  showSlidesSecondary(slideIndexSecondary += n);
+}
+
+function currentSlideSecondary(n) {
+  showSlidesSecondary(slideIndexSecondary = n);
+}
+
+function showSlidesSecondary(n) {
+  let i;
+  let slidesSecondary = document.getElementsByClassName("sliderSecondaryGun");
+  let dotsSecondary = document.getElementsByClassName("dotGunsSecondary");
+  if (n > slidesSecondary.length) {slideIndexSecondary = 1}    
+  if (n < 1) {slideIndexSecondary = slidesSecondary.length}
+  for (i = 0; i < slidesSecondary.length; i++) {
+      slidesSecondary[i].style.display = "none";  
+  }
+  for (i = 0; i < dotsSecondary.length; i++) {
+      dotsSecondary[i].className = dotsSecondary[i].className.replace(" active", "");
+  }
+  slidesSecondary[slideIndexSecondary -1].style.display = "block";  
+}
+
+//Slider Secundarias
+
+
+
+var slideIndexGuns = 1;
+showSlidesGuns(slideIndexGuns);
+
+function plusSlidesGuns(n) {
+  showSlidesGuns(slideIndexGuns += n);
+}
+
+function currentSlideGuns(n) {
+  showSlidesGuns(slideIndexGuns = n);
+}
+
+function showSlidesGuns(n) {
+  let i;
+  let slidesGuns = document.getElementsByClassName("slidesPrimaryGun");
+  let dotsGuns = document.getElementsByClassName("dotGuns");
+  if (n > slidesGuns.length) {slideIndexGuns = 1}    
+  if (n < 1) {slideIndexGuns = slidesGuns.length}
+  for (i = 0; i < slidesGuns.length; i++) {
+      slidesGuns[i].style.display = "none";  
+  }
+  for (i = 0; i < dotsGuns.length; i++) {
+      dotsGuns[i].className = dotsGuns[i].className.replace(" active", "");
+  }
+  slidesGuns[slideIndexGuns -1].style.display = "block";  
+}
+
+//slider Steel Guns
+
+var slideIndexSteel = 1;
+showSlidesSteel(slideIndexSteel);
+
+function plusSlidesSteel(n) {
+  showSlidesSteel(slideIndexSteel += n);
+}
+
+function currentSlideSteel(n) {
+  showSlidesSteel(slideIndexSteel = n);
+}
+
+function showSlidesSteel(n) {
+  let i;
+  let slidesSteel = document.getElementsByClassName("sliderSteel");
+  let dotsSteel = document.getElementsByClassName("dotGunsSteel");
+  if (n > slidesSteel.length) {slideIndexSteel = 1}    
+  if (n < 1) {slideIndexSteel = slidesSteel.length}
+  for (i = 0; i < slidesSteel.length; i++) {
+      slidesSteel[i].style.display = "none";  
+  }
+  for (i = 0; i < dotsSteel.length; i++) {
+      dotsSteel[i].className = dotsSteel[i].className.replace(" active", "");
+  }
+  slidesSteel[slideIndexSteel -1].style.display = "block";  
 }

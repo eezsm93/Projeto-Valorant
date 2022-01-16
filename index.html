@@ -129,7 +129,7 @@
                         <span class="dot" onclick="currentSlide(5)"></span> 
                     </div>
                     <div class="container-seeMore-maps">
-                        <h2 class="tittle-see-more-maps">Ver mais</h2>
+                        <a href="#"><h2 class="tittle-see-more-maps">Ver mais</h2></a>
                     </div>
                 </div>
             </section>
@@ -148,24 +148,25 @@
                     <div class="weapons-left">
                         <h4 class="weapon-tittle">Arma primaria</h4>
                         <div class="weapons-card">
-                            <img class="arrow-left" src="images/Caminho 255.svg">
-                            <div id="primaryWeaponImg" class="weapons-border">
+                            <a onclick="plusSlidesGuns(-1)"><img class="arrow-left" src="images/Caminho 255.svg"></a>
+                            <div id="primaryWeaponImgContainer" class="weapons-border">
                             </div>
-                            <img class="arrow-right" src="images/Caminho 256.svg">
+                            <br>
+                            <a onclick="plusSlidesGuns(1)"><img class="arrow-right" src="images/Caminho 256.svg"></a>
                         </div>
                         <h4 class="weapon-tittle">Arma secundaria</h4>
                         <div class="weapons-card">
-                            <img class="arrow-left" src="images/Caminho 255.svg">
+                            <a onclick="plusSlidesSecondary(-1)"><img class="arrow-left" src="images/Caminho 255.svg"></a>
                             <div id="secundaryWeaponImg" class="weapons-border" >
                             </div>
-                            <img class="arrow-right" src="images/Caminho 256.svg">
+                            <a onclick="plusSlidesSecondary(1)"><img class="arrow-right" src="images/Caminho 256.svg"></a>
                         </div>
                         <h4 class="weapon-tittle">Arma branca</h4>
                         <div class="weapons-card">
-                            <img class="arrow-left" src="images/Caminho 255.svg">
+                            <a onclick="plusSlidesSteel(-1)"><img class="arrow-left" src="images/Caminho 255.svg"></a>
                             <div id="stellWeaponImg" class="weapons-border" >
                             </div>
-                            <img class="arrow-right" src="images/Caminho 256.svg">
+                            <a onclick="plusSlidesSteel(1)"><img class="arrow-right" src="images/Caminho 256.svg"></a>
                         </div>
                     </div>
 
@@ -304,15 +305,10 @@
 
     </footer>
 
-
-
-
-
-
-
 </body>
 
 <script src="./JS/main.js"></script>
+
 
 
 
