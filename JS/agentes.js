@@ -559,7 +559,7 @@ function filterAgentsByName() {
   var name = nameInputFilter.value;
   if(name.length > 0){
     return agents.filter(function(agent){
-        return agent.name.match(name.toUpperCase());
+        return agent.name.toUpperCase().match(name.toUpperCase());
       })
   } else {
     return agents;
