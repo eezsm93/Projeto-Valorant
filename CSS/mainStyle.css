@@ -584,13 +584,14 @@ img{
 .suport-container{
     max-width: 100%;
     margin: 0 auto;
+
 }
 
 .suport-bg{
     margin: 0 auto;
     max-width: 76.5em;
     background: white;
-    border-radius: 5px;
+    border-radius: 10px;
     display: grid;
     padding: 55px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -719,7 +720,7 @@ img{
 .supFormModal-container{
   margin: 0 auto;
   background: white;
-  border-radius: 5px;
+  border-radius: 10px;
   display: grid;
   padding: 55px;
   grid-template-columns: 1fr 1fr 1fr;
@@ -779,10 +780,14 @@ img{
 .descriptionModal{
   display: grid;
   grid-area: descriptionModal;
+  
 }
 #formTxtModal{
   display: grid;
   grid-area: formTxtModal;
+  border: 2px solid #04254C;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .imgModalSup{
