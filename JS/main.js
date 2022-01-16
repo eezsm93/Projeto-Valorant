@@ -392,7 +392,7 @@ primaryWeaponImg = document.getElementById("primaryWeaponImg");
 secundaryWeaponImg = document.getElementById("secundaryWeaponImg");
 stellWeaponImg = document.getElementById("stellWeaponImg");
 
-guns.primaryGun.forEach(function(path, index){ 
+guns.primaryGun.filter(function(path, index){ 
   primaryWeaponImg.innerHTML = `<div class="gunImg" gunP="${index}">
     <img  src="${path}"/>
   </div>`;
@@ -410,6 +410,11 @@ guns.steel.forEach(function(path){
   <img class="gunImg" src="${path}"/>
   `;
 });
+
+
+
+
+
 
 
 
