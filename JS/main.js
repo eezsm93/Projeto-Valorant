@@ -500,6 +500,7 @@ formBtnSend.addEventListener("click", function(e){
   `
 });
 
+//SLIDER MAPAS
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -528,7 +529,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-//Slider Primaias
+//SLIDER ARMAS PRIMARIAS
 
 var slideIndexSecondary = 1;
 showSlidesSecondary(slideIndexSecondary);
@@ -556,7 +557,7 @@ function showSlidesSecondary(n) {
   slidesSecondary[slideIndexSecondary -1].style.display = "block";  
 }
 
-//Slider Secundarias
+//SLIDER ARMAS SECUNDARIAS
 
 
 
@@ -586,7 +587,7 @@ function showSlidesGuns(n) {
   slidesGuns[slideIndexGuns -1].style.display = "block";  
 }
 
-//slider Steel Guns
+//SLIDER ARMAS BRANCAS
 
 var slideIndexSteel = 1;
 showSlidesSteel(slideIndexSteel);
