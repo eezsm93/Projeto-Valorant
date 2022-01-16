@@ -442,27 +442,27 @@ formBtnSend.addEventListener("click", function(e){
   
 
   if(formName.length <= 0){
-    alert("Campo Nome Obrigatorio!");
+    alert("Campo 'Nome' Obrigatorio!");
     return;
   };
   if(formLastName.length <= 0){
-    alert("Campo Sobrenome Obrigatorio!");
+    alert("Campo 'Sobrenome' Obrigatorio!");
     return;
   };
   if(formEmail.length <= 0){
-    alert("Campo Sobrenome Obrigatorio!");
+    alert("Campo 'E-mail' Obrigatorio!");
     return;
   };
   if(formNickName.length <= 0){
-    alert("Campo Sobrenome Obrigatorio!");
+    alert("Campo 'Apelido de jogador' Obrigatorio!");
     return;
   };
   if(formSubject.length <= 0){
-    alert("Campo Sobrenome Obrigatorio!");
+    alert("Campo 'Assunto' Obrigatorio!");
     return;
   };
   if(formTxt.length <= 50 || formTxt.length >= 500){
-    alert("Por favor digite uma descricao de 50 a 500 caracteres");
+    alert("Por favor digite uma descrição entre 50 a 500 caracteres");
     return;
   };
 

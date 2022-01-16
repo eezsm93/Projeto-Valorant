@@ -606,7 +606,6 @@ img{
     "nada supBtn nadinha"
     ;
     gap: 15px;
-    grid-template-rows: 50px;
 
 }
 
@@ -646,37 +645,37 @@ img{
   position: relative;
 
 }
-
-.formNameClass{
-  min-width: 300px;
-  height: 35px;
+.formNameClass, .formLastNameClass,
+.formMailClass, .formNickNameClass,
+.subjectClass, .txtClass{
+  max-width: 100%;
+  min-height: 100%;
   margin-top: 25px;
   padding: 0 15px;
-
   border: 1px solid #04254C;
   border-radius: 5px;
   outline: none;
-
   transform-origin: top left;
   font-size: 1em;
 }
-
-.name-placeholder{
+.txtClass{
+  height: 150px;
+}
+.name-placeholder, .lastName-placeholder,
+.email-placeholder, .nickName-placeholder,
+.subject-placeholder, .txt-placeholder{
 position: absolute;
-top: 30px;
+top: 37px;
 left: 15px;
 transition: 0.3s all;
 }
-
 .formNameClass:focus + .name-placeholder,
 .formNameClass:not(:placeholder-shown) + .name-placeholder{
   top: 13px;
   background-color: white;
   padding: 0 1px;
   transition: 0.3s all;
-
 }
-
 
 
 .supLastName{
@@ -684,39 +683,106 @@ transition: 0.3s all;
   grid-area: supLastName;
   color: #133052;
   font-weight: bold;
+  position: relative;
 }
+
+.formLastNameClass:focus + .lastName-placeholder,
+.formLastNameClass:not(:placeholder-shown) + .lastName-placeholder{
+  top: 13px;
+  background-color: white;
+  padding: 0 1px;
+  transition: 0.3s all;
+}
+
 
 .supMail{
   display: grid;
   grid-area: supMail;
   color: #133052;
   font-weight: bold;
+  position: relative;
 }
+
+.formMailClass:focus + .email-placeholder,
+.formMailClass:not(:placeholder-shown) + .email-placeholder{
+  top: 13px;
+  background-color: white;
+  padding: 0 1px;
+  transition: 0.3s all;
+}
+
 
 .supNickName{
   display: grid;
   grid-area: supNickName;
   color: #133052;
   font-weight: bold;
+  position: relative;
 }
+
+.formNickNameClass:focus + .nickName-placeholder,
+.formNickNameClass:not(:placeholder-shown) + .nickName-placeholder{
+  top: 13px;
+  background-color: white;
+  padding: 0 1px;
+  transition: 0.3s all;
+}
+
 
 .supImg{
   display: grid;
   grid-area: supImg;
   justify-content: center;
 }
+
+
 .supSubject{
   display: grid;
   grid-area: supSubject;
   color: #133052;
   font-weight: bold;
+  position: relative;
 }
+
+.subjectClass:focus + .subject-placeholder,
+.subjectClass:not(:placeholder-shown) + .subject-placeholder{
+  top: 13px;
+  background-color: white;
+  padding: 0 1px;
+  transition: 0.3s all;
+}
+
+
+
+
+
+
 .supTxt{
   display: grid;
   grid-area: supTxt;
   color: #133052;
   font-weight: bold;
+  position: relative;
 }
+
+.txtClass:focus + .txt-placeholder,
+.txtClass:not(:placeholder-shown) + .txt-placeholder{
+  top: 13px;
+  background-color: white;
+  padding: 0 1px;
+  transition: 0.3s all;
+}
+
+
+
+
+
+
+
+
+
+
+
 .supBtn{
   display: grid;
   grid-area: supBtn;
