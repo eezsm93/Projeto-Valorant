@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
         rel="stylesheet">
     <link href="CSS/mainStyle.css" rel="stylesheet">
+    <link href="CSS/slidesShow.css" rel="stylesheet">
 
     <script>
     </script>
@@ -110,11 +111,25 @@
         </section>
         <div class="middle-bg">
             <section class="maps-bg">
-                <div class="maps-container">
-                    <div>
-                        <h2 class="tittle">Mapas</h2>
+                <div class="maps-container-default">
+                    <div class="tittle-container-maps">
+                        <h2 class="tittle tittle-maps">Mapas</h2>
                     </div>
-                    <div id="mapsContainer" class="maps-cards">
+                    <div class="slideshow-container" id="mapsContainer">
+                        
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span> 
+                        <span class="dot" onclick="currentSlide(5)"></span> 
+                    </div>
+                    <div class="container-seeMore-maps">
+                        <h2 class="tittle-see-more-maps">Ver mais</h2>
                     </div>
                 </div>
             </section>
@@ -272,7 +287,7 @@
                 </div>
                 <div class="supBtnContainerModal">
                     <div>
-                        <button class="cancelBtnModalSup" type="submit">Cancelar</button>
+                        <button id="modalCancelSup" class="cancelBtnModalSup" type="submit">Cancelar</button>
                     </div>
                     <div>
                         <button class="sendBtnModalSup closeModalBtnSave" id="" type="submit">Enviar</button>

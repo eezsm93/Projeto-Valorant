@@ -338,9 +338,11 @@ cardContainerElement.innerHTML +=
 
 maps.forEach(function (path) {
   mapContainerElement.innerHTML += `
-   <div class="mapsCards">
-      <img class="mapImg" src="${path}"/>
-    </div>`;
+  <div class="mySlides fade">
+  <img src="${path}" style="width:100%">
+  <div class="text">Mapas</div>
+</div>
+`;
 });
 
 
@@ -392,10 +394,14 @@ primaryWeaponImg = document.getElementById("primaryWeaponImg");
 secundaryWeaponImg = document.getElementById("secundaryWeaponImg");
 stellWeaponImg = document.getElementById("stellWeaponImg");
 
-guns.primaryGun.filter(function(path, index){ 
+guns.primaryGun.filter(function(path, index){
+  let indexArma = path; 
   primaryWeaponImg.innerHTML = `<div class="gunImg" gunP="${index}">
     <img  src="${path}"/>
   </div>`;
+
+
+  console.log(path);
 
 });
 
@@ -491,5 +497,29 @@ formBtnSend.addEventListener("click", function(e){
 });
 
 
+var slideIndex = 1;
+showSlides(slideIndex);
 
-  
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
