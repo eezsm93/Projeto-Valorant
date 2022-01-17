@@ -270,7 +270,11 @@
     align-items: center;
     font-size: 1.125em;
     text-transform: uppercase;
+    cursor: pointer;
+}
 
+.btn1:hover{
+    color: #E13157;
 }
 
 .btn2{
@@ -283,6 +287,11 @@
     align-items: center;
     font-size: 1.125em;
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn2:hover{
+    color: black;
 }
 
 

@@ -312,7 +312,6 @@ var gunsContainerElement = document.getElementById("gunsContainer");
 var mapContainerElement = document.getElementById("mapsContainer");
 
 
-
 cardContainerElement.innerHTML += ""
 
 agents.forEach(function (item, index /*, arr */) {
@@ -325,7 +324,6 @@ agents.forEach(function (item, index /*, arr */) {
       <div>
     </div>`;
 });
-
 
 
 
@@ -344,9 +342,6 @@ maps.forEach(function (path) {
 </div>
 `;
 });
-
-
-
 
 
 var modalBack = document.querySelector(".modal-back");
@@ -397,7 +392,7 @@ primaryWeaponImg = document.getElementById("primaryWeaponImgContainer");
 secundaryWeaponImg = document.getElementById("secundaryWeaponImg");
 stellWeaponImg = document.getElementById("stellWeaponImg");
 
-guns.primaryGun.forEach(function(path, index){
+guns.primaryGun.forEach(function (path, index) {
   primaryWeaponImg.innerHTML += `
   <div class="slidesPrimaryGun fade" gunsPrimary= ${index}>
   <img src="${path}">
@@ -405,7 +400,7 @@ guns.primaryGun.forEach(function(path, index){
 `;
 });
 
-guns.secondaryGun.forEach(function(path, index){ 
+guns.secondaryGun.forEach(function (path, index) {
   secundaryWeaponImg.innerHTML += `
   <div class="sliderSecondaryGun fade" gunsSecundary= ${index}>
   <img src="${path}">
@@ -413,7 +408,7 @@ guns.secondaryGun.forEach(function(path, index){
   `;
 });
 
-guns.steel.forEach(function(path, index){
+guns.steel.forEach(function (path, index) {
   stellWeaponImg.innerHTML += `
   <div class="sliderSteel fade" gunsSteel= ${index}>
   <img src="${path}"> 
@@ -423,54 +418,49 @@ guns.steel.forEach(function(path, index){
 
 
 
-
-
-
-
-
 var supFormModalBg = document.querySelector(".supFormModal-bg");
 var supFromModalClose = document.querySelector(".modal-close-form")
 var formBtnSend = document.getElementById("formSendBtn");
 
-formBtnSend.addEventListener("click", function(e){
+formBtnSend.addEventListener("click", function (e) {
   var formName = document.getElementById("formName").value;
   var formLastName = document.getElementById("formLastName").value;
   var formEmail = document.getElementById("formEmail").value;
   var formNickName = document.getElementById("formNickName").value;
   var formSubject = document.getElementById("formSubjectId").value;
   var formTxt = document.getElementById("formTxtId").value;
-  
 
-  if(formName.length <= 0){
+
+  if (formName.length <= 0) {
     alert("Campo 'Nome' Obrigatorio!");
     return;
   };
-  if(formLastName.length <= 0){
+  if (formLastName.length <= 0) {
     alert("Campo 'Sobrenome' Obrigatorio!");
     return;
   };
-  if(formEmail.length <= 0){
+  if (formEmail.length <= 0) {
     alert("Campo 'E-mail' Obrigatorio!");
     return;
   };
-  if(formNickName.length <= 0){
+  if (formNickName.length <= 0) {
     alert("Campo 'Apelido de jogador' Obrigatorio!");
     return;
   };
-  if(formSubject.length <= 0){
+  if (formSubject.length <= 0) {
     alert("Campo 'Assunto' Obrigatorio!");
     return;
   };
-  if(formTxt.length <= 50 || formTxt.length >= 500){
+  if (formTxt.length <= 50 || formTxt.length >= 500) {
     alert("Por favor digite uma descrição entre 50 a 500 caracteres");
     return;
   };
 
 
-  
+
   supFormModalBg.classList.add("bg-active");
-  supFromModalClose.addEventListener("click", function(){
-  supFormModalBg.classList.remove("bg-active");
+  supFromModalClose.addEventListener("click", function () {
+    supFormModalBg.classList.remove("bg-active");
   });
 
 
@@ -517,16 +507,16 @@ function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
 //SLIDER ARMAS PRIMARIAS
@@ -546,15 +536,15 @@ function showSlidesSecondary(n) {
   let i;
   let slidesSecondary = document.getElementsByClassName("sliderSecondaryGun");
   let dotsSecondary = document.getElementsByClassName("dotGunsSecondary");
-  if (n > slidesSecondary.length) {slideIndexSecondary = 1}    
-  if (n < 1) {slideIndexSecondary = slidesSecondary.length}
+  if (n > slidesSecondary.length) { slideIndexSecondary = 1 }
+  if (n < 1) { slideIndexSecondary = slidesSecondary.length }
   for (i = 0; i < slidesSecondary.length; i++) {
-      slidesSecondary[i].style.display = "none";  
+    slidesSecondary[i].style.display = "none";
   }
   for (i = 0; i < dotsSecondary.length; i++) {
-      dotsSecondary[i].className = dotsSecondary[i].className.replace(" active", "");
+    dotsSecondary[i].className = dotsSecondary[i].className.replace(" active", "");
   }
-  slidesSecondary[slideIndexSecondary -1].style.display = "block";  
+  slidesSecondary[slideIndexSecondary - 1].style.display = "block";
 }
 
 //SLIDER ARMAS SECUNDARIAS
@@ -576,15 +566,15 @@ function showSlidesGuns(n) {
   let i;
   let slidesGuns = document.getElementsByClassName("slidesPrimaryGun");
   let dotsGuns = document.getElementsByClassName("dotGuns");
-  if (n > slidesGuns.length) {slideIndexGuns = 1}    
-  if (n < 1) {slideIndexGuns = slidesGuns.length}
+  if (n > slidesGuns.length) { slideIndexGuns = 1 }
+  if (n < 1) { slideIndexGuns = slidesGuns.length }
   for (i = 0; i < slidesGuns.length; i++) {
-      slidesGuns[i].style.display = "none";  
+    slidesGuns[i].style.display = "none";
   }
   for (i = 0; i < dotsGuns.length; i++) {
-      dotsGuns[i].className = dotsGuns[i].className.replace(" active", "");
+    dotsGuns[i].className = dotsGuns[i].className.replace(" active", "");
   }
-  slidesGuns[slideIndexGuns -1].style.display = "block";  
+  slidesGuns[slideIndexGuns - 1].style.display = "block";
 }
 
 //SLIDER ARMAS BRANCAS
@@ -604,24 +594,24 @@ function showSlidesSteel(n) {
   let i;
   let slidesSteel = document.getElementsByClassName("sliderSteel");
   let dotsSteel = document.getElementsByClassName("dotGunsSteel");
-  if (n > slidesSteel.length) {slideIndexSteel = 1}    
-  if (n < 1) {slideIndexSteel = slidesSteel.length}
+  if (n > slidesSteel.length) { slideIndexSteel = 1 }
+  if (n < 1) { slideIndexSteel = slidesSteel.length }
   for (i = 0; i < slidesSteel.length; i++) {
-      slidesSteel[i].style.display = "none";  
+    slidesSteel[i].style.display = "none";
   }
   for (i = 0; i < dotsSteel.length; i++) {
-      dotsSteel[i].className = dotsSteel[i].className.replace(" active", "");
+    dotsSteel[i].className = dotsSteel[i].className.replace(" active", "");
   }
-  slidesSteel[slideIndexSteel -1].style.display = "block";  
+  slidesSteel[slideIndexSteel - 1].style.display = "block";
 }
 
 
 cancelBtnModalSup = document.getElementById("modalCancelSup");
 sendBtnModalSup = document.getElementById("modalSendSup");
-cancelBtnModalSup.addEventListener("click", function(){
+cancelBtnModalSup.addEventListener("click", function () {
   supFormModalBg.classList.remove("bg-active");
 });
 
-sendBtnModalSup.addEventListener("click", function(){
+sendBtnModalSup.addEventListener("click", function () {
   supFormModalBg.classList.remove("bg-active");
 });
