@@ -23,11 +23,11 @@
 
 <body>
     <header class="header-bg">
+        <div class="header-container-top">
             <div class="header-top">
                 <div>
                     <img src="images/Logo.svg">
                 </div>
-
                 <div>
                     <nav class="header-nav">
                         <ul>
@@ -43,12 +43,11 @@
                     <button class="btn">Jogue Agora</button>
                 </div>
             </div>
-        <div class="header-valorant">
-            <img src="images/-41603133698zip8pbgjls-removebg-preview.png">
+            <div class="header-valorant">
+                <img src="images/-41603133698zip8pbgjls-removebg-preview.png">
+            </div>
         </div>
     </header>
-
-
     <div class="modal-back">
         <div class="modal-container01">
             <div class="modal-left">
@@ -59,7 +58,7 @@
                 <div class="modal-habilidades">
                     <div class="habilidade">
                         <div class="arma-primaria">
-                            <p>Arma Primaria</p>
+                            <p>Arma Primária</p>
                         </div>
                         <div class="dmg-arma-primaria">
                             <p id="primary-dmg-field" class="dmg-p"></p>
@@ -67,7 +66,7 @@
                     </div>
                     <div class="habilidade">
                         <div class="arma-secundaria">
-                            <p>Arma secundaria</p>
+                            <p>Arma Secundária</p>
                         </div>
                         <div class="dmg-arma-secundaria">
                             <p id="secondary-dmg-field" class="dmg-p"></p>
@@ -75,7 +74,7 @@
                     </div>
                     <div class='habilidade'>
                         <div class="arma-branca">
-                            <p>Arma branca</p>
+                            <p>Arma Branca</p>
                         </div>
                         <div class="dmg-arma-branca">
                             <p id="melee-dmg-field" class="dmg-p"></p>
@@ -116,20 +115,22 @@
                         <h2 class="tittle tittle-maps">Mapas</h2>
                     </div>
                     <div class="slideshow-container" id="mapsContainer">
-                        
+
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
                     <br>
                     <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span> 
-                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
                         <span class="dot" onclick="currentSlide(3)"></span>
-                        <span class="dot" onclick="currentSlide(4)"></span> 
-                        <span class="dot" onclick="currentSlide(5)"></span> 
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
                     </div>
                     <div class="container-seeMore-maps">
-                        <a href="#"><h2 class="tittle-see-more-maps">Ver mais</h2></a>
+                        <a href="#">
+                            <h2 class="tittle-see-more-maps">Ver mais</h2>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -146,7 +147,7 @@
 
                 <div id="gunsContainer" class="weapons-container">
                     <div class="weapons-left">
-                        <h4 class="weapon-tittle">Arma primaria</h4>
+                        <h4 class="weapon-tittle">Arma Primária</h4>
                         <div class="weapons-card">
                             <a onclick="plusSlidesGuns(-1)"><img class="arrow-left" src="images/Caminho 255.svg"></a>
                             <div id="primaryWeaponImgContainer" class="weapons-border">
@@ -154,17 +155,19 @@
                             <br>
                             <a onclick="plusSlidesGuns(1)"><img class="arrow-right" src="images/Caminho 256.svg"></a>
                         </div>
-                        <h4 class="weapon-tittle">Arma secundaria</h4>
+                        <h4 class="weapon-tittle">Arma Secundária</h4>
                         <div class="weapons-card">
-                            <a onclick="plusSlidesSecondary(-1)"><img class="arrow-left" src="images/Caminho 255.svg"></a>
-                            <div id="secundaryWeaponImg" class="weapons-border" >
+                            <a onclick="plusSlidesSecondary(-1)"><img class="arrow-left"
+                                    src="images/Caminho 255.svg"></a>
+                            <div id="secundaryWeaponImg" class="weapons-border">
                             </div>
-                            <a onclick="plusSlidesSecondary(1)"><img class="arrow-right" src="images/Caminho 256.svg"></a>
+                            <a onclick="plusSlidesSecondary(1)"><img class="arrow-right"
+                                    src="images/Caminho 256.svg"></a>
                         </div>
-                        <h4 class="weapon-tittle">Arma branca</h4>
+                        <h4 class="weapon-tittle">Arma Branca</h4>
                         <div class="weapons-card">
                             <a onclick="plusSlidesSteel(-1)"><img class="arrow-left" src="images/Caminho 255.svg"></a>
-                            <div id="stellWeaponImg" class="weapons-border" >
+                            <div id="stellWeaponImg" class="weapons-border">
                             </div>
                             <a onclick="plusSlidesSteel(1)"><img class="arrow-right" src="images/Caminho 256.svg"></a>
                         </div>
@@ -248,14 +251,14 @@
                             <span class="subject-placeholder">Assunto</span>
                         </div>
                         <div class="supTxt">
-                            <textarea id="formTxtId" class="txtClass description" placeholder=" " ></textarea>
+                            <textarea id="formTxtId" class="txtClass description" placeholder=" "></textarea>
                             <span class="txt-placeholder">Descrição</span>
                         </div>
                         <div class="supBtn">
                             <input id="formSendBtn" type="submit" value="Enviar" class="btn-form">
                         </div>
                         <div class="supImg">
-                            <img  src="images/valorant-collectible-variable-removed-spray.png">
+                            <img src="images/valorant-collectible-variable-removed-spray.png">
                         </div>
                     </div>
                 </div>
@@ -266,7 +269,7 @@
             <div class="supFormModal-container">
                 <div class="fullNameModal">
                     <h4>Nome Completo:</h4>
-                </div> 
+                </div>
                 <div id="formNameModal">
                 </div>
                 <div class="emailModal">
@@ -290,7 +293,7 @@
                 <div id="formTxtModal">
                 </div>
                 <div class="imgModalSup">
-                    <img  src="images/valorant-collectible-variable-removed-spray.png">
+                    <img src="images/valorant-collectible-variable-removed-spray.png">
                 </div>
                 <div class="supBtnContainerModal">
                     <div>
@@ -302,23 +305,15 @@
                 </div>
                 <span class="modal-close-form">X</span>
             </div>
-            
+
         </div>
-        
+
     </main>
 
     <footer>
-
     </footer>
 
 </body>
-
 <script src="./JS/main.js"></script>
-
-
-
-
-
-
 
 </html>
