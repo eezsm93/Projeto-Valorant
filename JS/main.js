@@ -614,3 +614,14 @@ function showSlidesSteel(n) {
   }
   slidesSteel[slideIndexSteel -1].style.display = "block";  
 }
+
+
+cancelBtnModalSup = document.getElementById("modalCancelSup");
+sendBtnModalSup = document.getElementById("modalSendSup");
+cancelBtnModalSup.addEventListener("click", function(){
+  supFormModalBg.classList.remove("bg-active");
+});
+
+sendBtnModalSup.addEventListener("click", function(){
+  supFormModalBg.classList.remove("bg-active");
+});

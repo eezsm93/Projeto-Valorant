@@ -766,12 +766,6 @@ transition: 0.3s all;
   padding: 0 1px;
   transition: 0.3s all;
 }
-
-
-
-
-
-
 .supTxt{
   display: grid;
   grid-area: supTxt;
@@ -787,16 +781,6 @@ transition: 0.3s all;
   padding: 0 1px;
   transition: 0.3s all;
 }
-
-
-
-
-
-
-
-
-
-
 
 .supBtn{
   display: grid;
@@ -899,7 +883,6 @@ transition: 0.3s all;
 #formTxtModal{
   display: grid;
   grid-area: formTxtModal;
-  border: 2px solid #04254C;
   padding: 10px;
   border-radius: 5px;
 }

@@ -32,10 +32,10 @@
                     <nav class="header-nav">
                         <ul>
                             <li><a href="agentes.html">Agentes</a></li>
-                            <li><a href="#">Mapas</a></li>
-                            <li><a href="#">Arsenal</a></li>
-                            <li><a href="#">Download</a></li>
-                            <li><a href="#">Suporte</a></li>
+                            <li><a href="#maps">Mapas</a></li>
+                            <li><a href="#weapons">Arsenal</a></li>
+                            <li><a href="#donwload">Download</a></li>
+                            <li><a href="#suport">Suporte</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -96,8 +96,6 @@
             <span class="modal-close">X</p>
         </div>
     </div>
-
-
     <main class="main">
         <section class="agents-bg">
             <div class="agents-container">
@@ -109,7 +107,7 @@
             </div>
         </section>
         <div class="middle-bg">
-            <section class="maps-bg">
+            <section id="maps" class="maps-bg">
                 <div class="maps-container-default">
                     <div class="tittle-container-maps">
                         <h2 class="tittle tittle-maps">Mapas</h2>
@@ -135,7 +133,7 @@
                 </div>
             </section>
 
-            <section class="weapons-bg">
+            <section id="weapons" class="weapons-bg">
                 <div class="weapons-header">
                     <div>
                         <h2 class="tittle">Escolha Sua Arma</h2>
@@ -179,7 +177,7 @@
                 </div>
             </section>
 
-            <section class="download-bg">
+            <section id="donwload" class="download-bg">
                 <div class="download-container">
                     <div class="download-left">
                         <h2 class="tittle">Baixe o Jogo</h2>
@@ -224,38 +222,41 @@
                     </div>
                 </div>
             </section>
-            <section class="suport">
+            <section id="suport" class="suport-class">
                 <div class="suport-container">
                     <div class="suport-bg">
                         <div class="suport-title">
                             <h2>Suporte</h2>
                         </div>
                         <div class="supName">
-                            <input id="formName" type="text" placeholder=" " class="formNameClass">
+                            <input id="formName" type="text" name="name" placeholder=" " class="formNameClass">
                             <span class="name-placeholder">Nome</span>
                         </div>
                         <div class="supLastName">
-                            <input id="formLastName" type="text" placeholder=" " class="formLastNameClass">
+                            <input id="formLastName" type="text" name="lastName" placeholder=" "
+                                class="formLastNameClass">
                             <span class="lastName-placeholder">Sobrenome</span>
                         </div>
                         <div class="supMail">
-                            <input id="formEmail" type="e-mail" placeholder=" " class="formMailClass">
+                            <input id="formEmail" type="e-mail" name="mail" placeholder=" " class="formMailClass">
                             <span class="email-placeholder">E-mail</span>
                         </div>
                         <div class="supNickName">
-                            <input id="formNickName" type="text" placeholder=" " class="formNickNameClass">
+                            <input id="formNickName" type="text" name="nickName" placeholder=" "
+                                class="formNickNameClass">
                             <span class="nickName-placeholder">Apelido de jogador</span>
                         </div>
                         <div class="supSubject">
-                            <input id="formSubjectId" type="text" placeholder=" " class="subjectClass">
+                            <input id="formSubjectId" type="text" name="subject" placeholder=" " class="subjectClass">
                             <span class="subject-placeholder">Assunto</span>
                         </div>
                         <div class="supTxt">
-                            <textarea id="formTxtId" class="txtClass description" placeholder=" "></textarea>
+                            <textarea id="formTxtId" name="txtArea" class="txtClass description"
+                                placeholder=" "></textarea>
                             <span class="txt-placeholder">Descrição</span>
                         </div>
                         <div class="supBtn">
-                            <input id="formSendBtn" type="submit" value="Enviar" class="btn-form">
+                            <input id="formSendBtn" type="submit" name="btnSendSup" value="Enviar" class="btn-form">
                         </div>
                         <div class="supImg">
                             <img src="images/valorant-collectible-variable-removed-spray.png">
@@ -264,52 +265,50 @@
                 </div>
             </section>
         </div>
-
-        <div class="supFormModal-bg">
-            <div class="supFormModal-container">
-                <div class="fullNameModal">
-                    <h4>Nome Completo:</h4>
-                </div>
-                <div id="formNameModal">
-                </div>
-                <div class="emailModal">
-                    <h4>E-mail:</h4>
-                </div>
-                <div id="formEmailModal">
-                </div>
-                <div class="nickNameModal">
-                    <h4>Apelido de Jogador:</h4>
-                </div>
-                <div id="formNickNameModal">
-                </div>
-                <div class="subjectModal">
-                    <h4>Assunto:</h4>
-                </div>
-                <div id="formSubjectModal">
-                </div>
-                <div class="descriptionModal">
-                    <h4>Descrição:</h4>
-                </div>
-                <div id="formTxtModal">
-                </div>
-                <div class="imgModalSup">
-                    <img src="images/valorant-collectible-variable-removed-spray.png">
-                </div>
-                <div class="supBtnContainerModal">
-                    <div>
-                        <button id="modalCancelSup" class="cancelBtnModalSup" type="submit">Cancelar</button>
+        <form action="#" method="get">
+            <div class="supFormModal-bg">
+                <div class="supFormModal-container">
+                    <div class="fullNameModal">
+                        <h4>Nome Completo:</h4>
                     </div>
-                    <div>
-                        <button class="sendBtnModalSup closeModalBtnSave" id="" type="submit">Enviar</button>
+                    <div id="formNameModal">
                     </div>
+                    <div class="emailModal">
+                        <h4>E-mail:</h4>
+                    </div>
+                    <div id="formEmailModal">
+                    </div>
+                    <div class="nickNameModal">
+                        <h4>Apelido de Jogador:</h4>
+                    </div>
+                    <div id="formNickNameModal">
+                    </div>
+                    <div class="subjectModal">
+                        <h4>Assunto:</h4>
+                    </div>
+                    <div id="formSubjectModal">
+                    </div>
+                    <div class="descriptionModal">
+                        <h4>Descrição:</h4>
+                    </div>
+                    <div id="formTxtModal">
+                    </div>
+                    <div class="imgModalSup">
+                        <img src="images/valorant-collectible-variable-removed-spray.png">
+                    </div>
+                    <div class="supBtnContainerModal">
+                        <div>
+                            <button id="modalCancelSup" class="cancelBtnModalSup">Cancelar</button>
+                        </div>
+                        <div>
+                            <button type="submit" class="sendBtnModalSup" id="modalSendSup">Enviar</button>
+                        </div>
+                    </div>
+                    <span class="modal-close-form">X</span>
                 </div>
-                <span class="modal-close-form">X</span>
             </div>
-
-        </div>
-
+        </form>
     </main>
-
     <footer>
     </footer>
 
